@@ -1,0 +1,14 @@
+<div excel-input excel-data="hoi.data" excel-variables="hoi.variables"></div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th ng-repeat="var in hoi.variables">{{var}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in hoi.data">
+      <td ng-repeat="var in hoi.variables">{{row[var]}}</td>
+    </tr>
+  </tbody>
+</table>

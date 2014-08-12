@@ -1,0 +1,55 @@
+<h1>Responder s'il vous plait</h1>
+<div class="row">
+  <div class="col-sm-8">
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer consequat sapien a lectus gravida euismod. Sed vitae nisl non odio viverra accumsan. Curabitur nisi neque, egestas sed, vulputate sit amet, luctus vitae, dolor. Cras lacus massa, sagittis ut, volutpat consequat, interdum a, nulla. Vivamus rhoncus molestie nulla. Ut porttitor turpis sit amet turpis. Nam suscipit, justo quis ullamcorper sagittis, mauris diam dictum elit, suscipit blandit ligula ante sit amet mauris. Integer id arcu. Aenean scelerisque. Sed a purus. Pellentesque nec nisl eget metus varius tempor. Curabitur tincidunt iaculis lectus. Aliquam molestie velit id urna. Suspendisse in ante ac nunc commodo placerat.
+    </p>
+    <p>
+      \[ \sum_{k=0}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} \]
+    </p>
+    <p>
+      Morbi gravida posuere est. Fusce id augue. Sed facilisis, felis quis ornare consequat, neque risus faucibus dui, quis ullamcorper tellus lacus vitae felis. Phasellus ac dolor. Integer ante diam, consectetuer in, tempor vitae, volutpat in, enim. Integer diam felis, semper at, iaculis ut, suscipit quis, dolor. Vestibulum semper, velit et tincidunt vehicula, nisl risus eleifend ipsum, vel consectetuer enim dolor id magna. Praesent hendrerit urna ac lacus. Maecenas porttitor ipsum sed orci. 
+    </p>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default" ng-if="auth.user.username">
+      <div class="panel-body">
+        You are now logged in as {{auth.user.username}}.
+      </div>
+    </div>
+    <div class="panel panel-default" ng-if="!auth.user.username">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{panelTitle()}}</h3>
+      </div>
+      <div class="panel-body">
+        <form novalidate name="form" role="form" ng-submit="submitForm(formdata)">
+          <div class="alert alert-danger" ng-if="errors.invalidLogin">Bad credentials. Please try again or click ‘register’ if you don't have an account yet.</div>
+
+          <div class="alert alert-danger" ng-if="errors.usernameInUse">An account with this username already exists. Please choose another username or click ‘login’ to use your existing credentials.</div>
+
+          <div class="form-group has-feedback" ng-class="{'has-error': form.username.$dirty && form.username.$invalid}">
+            <label class="control-label" for="username">Username</label>
+            <input name="username" required class="form-control" type="text" id="username" ng-model="formdata.username">
+            <span ng-show="form.username.$dirty && form.username.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': form.password.$dirty && form.password.$invalid}">
+            <label class="control-label" for="password">Password</label>
+            <input name="password" required class="form-control" type="password" id="password" ng-model="formdata.password">
+            <span ng-show="form.password.$dirty && form.password.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback" ng-if="formMode == 'register'" ng-class="{'has-error': form.email.$dirty && form.email.$invalid}">
+            <label class="control-label" for="email">E-mail address</label>
+            <input name="email" required class="form-control" type="email" id="email" ng-model="formdata.email">
+            <span ng-show="form.email.$dirty && form.email.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback" ng-if="formMode == 'register'" ng-class="{'has-error': form.organization.$dirty && form.organization.$invalid}">
+            <label class="control-label" for="organization">Organization</label>
+            <input name="organization" class="form-control" type="text" id="organization" ng-model="formdata.organization">
+            <span ng-show="form.organization.$dirty && form.organization.$invalid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+          <button type="submit" ng-disabled="!form.$valid" class="btn btn-primary">{{submitText()}}</button>&nbsp;&nbsp;or<button type='button' class="btn btn-link" ng-click="toggleForm()">{{switchText()}}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

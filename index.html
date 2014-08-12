@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html ng-app="rsvpApp" ng-cloak>
+  <head>
+    <title>RSVP</title>
+    <link rel="stylesheet" href="css/rsvp.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="navbar navbar-inverse" ng-controller="NavCtrl">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="app.home">RSVP</a>
+          </div>
+          <ul class="nav navbar-nav navbar-left" ng-if="!!auth.user.username">
+            <li><a href="#" ui-sref="app.analysis.new">Start Analysis</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" ng-if="!!auth.user.username">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{auth.user.username}} <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href='#' ng-click="auth.logout()">Logout</a></li>
+              </ul>
+            </li>
+          </ul> 
+        </div>
+      </div>
+      <div class="alert alert-danger" ng-if="!!error">{{error}}</div>
+      <div ui-view></div>
+    </div>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/js-xls/dist/xls.full.min.js"></script>
+    <script src="/bower_components/angular-ui-bootstrap/ui-bootstrap.js"></script>
+    <script src="/js/rsvp-ck.js"></script>
+  </body>
+</html>

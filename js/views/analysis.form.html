@@ -1,0 +1,24 @@
+<div class="analysis-form">
+  <h2>1. Select your data</h2>
+  <div class="row">
+    <div class="col-sm-6 info">
+      <p>In ac odio vel lorem tincidunt pellentesque. Nam tempor pulvinar turpis. Nunc in leo in libero ultricies interdum. Proin ut urna. Donec ultricies nunc dapibus justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+    <div class="col-sm-6">
+      <p>Are you analysing the results from one patient or from a batch of patients?</p>
+      <div class="btn-group">
+        <label class="btn btn-primary" ng-model="analysis.type" btn-radio="'single'">One patient</label>
+        <label class="btn btn-primary" ng-model="analysis.type" btn-radio="'batch'">Batch</label>
+      </div>
+
+      <div ng-if="analysis.type == 'batch'">
+        <p><br>batch</p>
+        <div excel-input excel-data="analysis.data" excel-variables="analysis.serotypes" serotypes="serotypes"></div>
+      </div>
+
+      <div ng-if="analysis.type == 'single'">
+        <p><br>one person</p>
+      </div>
+    </div>
+  </div>
+</div>

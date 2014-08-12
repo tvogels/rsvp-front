@@ -1,0 +1,42 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "variables.less";
+
+.form-group label {
+  color: @lightblue;
+  font-weight:500;
+}
+body {
+  padding:1em;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+.info {
+  color: desaturate(lighten(@darkblue,30%),30%);
+}
+
+.dropzone {
+  display: block;
+  text-align: center;
+  padding: 1em 0;
+  margin: 1em 0;
+  color: #aaa;
+  border: 2px dashed #aaa;
+  border-radius: 7px;
+  cursor: default;
+  background-color: darken(@white,2%);
+  -webkit-transition: background-color ease .3s;
+  >p {
+    margin:0;padding:0;
+  }
+  &.hover {
+    background-color:lighten(@white,5%);
+  }
+}
+
+.modal.fade.in {
+  display:block;
+  background-color:rgba(0,0,0,0.2);
+}
