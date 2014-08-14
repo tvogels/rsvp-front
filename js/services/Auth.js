@@ -1,4 +1,4 @@
-app.factory('Auth', function($http, $cookieStore, $q){
+app.factory('Auth', function($http, $q){
 
     var accessLevels = routingConfig.accessLevels
         , userRoles = routingConfig.userRoles
@@ -76,13 +76,10 @@ app.factory('Auth', function($http, $cookieStore, $q){
         authorizePromise: function (role) {
             var self = this;
             return this.userDeferred().then(function () {
-                console.log('start authorization');
                 var deferred = $q.defer();
                 if (self.authorize(role)) {
-                  console.log('authorized');
                   deferred.resolve(true);
                 } else {
-                  console.log('no access');
                   deferred.reject(true);
                 }
                 return deferred.promise;

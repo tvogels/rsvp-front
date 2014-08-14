@@ -1,12 +1,19 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
-@import "variables.less";
+// @import "variables.less";
+@green: #006443;
+@orange: #ff7300;
+@darkblue: #0a1a25;
+@red: #ef0002;
+@blueblue: #1041a3;
+@white: lighten(#e3eee2,5%);
+@lightblue: #2579a1;
 
 .form-group label {
-  color: @lightblue;
   font-weight:500;
 }
 body {
   padding:1em;
+  padding-bottom:8em;
 }
 
 * {
@@ -14,7 +21,14 @@ body {
 }
 
 .info {
-  color: desaturate(lighten(@darkblue,30%),30%);
+  color: lighten(@gray,20%);
+}
+
+.nav-tabs {
+  margin-bottom:15px;
+  a {
+    cursor:pointer;
+  }
 }
 
 .dropzone {
@@ -26,14 +40,18 @@ body {
   border: 2px dashed #aaa;
   border-radius: 7px;
   cursor: default;
-  background-color: darken(@white,2%);
+  background-color: darken(#fff,2%);
   -webkit-transition: background-color ease .3s;
   >p {
     margin:0;padding:0;
   }
   &.hover {
-    background-color:lighten(@white,5%);
+    background-color:lighten(#fff,5%);
   }
+}
+
+.form-control.ng-invalid.ng-dirty {
+  border: 1px solid red;
 }
 
 .modal.fade.in {

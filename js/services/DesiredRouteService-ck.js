@@ -1,1 +1,0 @@
-app.service("DesiredRoute",function(e,t){this.route=null;this.setRoute=function(e){this.route=e};this.goToRoute=function(){!this.route||t.go("root")};return this});

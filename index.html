@@ -4,19 +4,21 @@
   <head>
     <title>RSVP</title>
     <link rel="stylesheet" href="css/rsvp.css">
+    <link rel="stylesheet" href="bower_components/select2/select2.css">
+    <link rel="stylesheet" href="bower_components/select2-bootstrap-css/select2-bootstrap.css">
     <meta charset="utf-8">
   </head>
   <body>
 
     <div class="container">
 
-      <div class="navbar navbar-inverse" ng-controller="NavCtrl">
+      <div class="navbar navbar-default" ng-controller="NavCtrl">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="app.home">RSVP</a>
+            <a class="navbar-brand" ui-sref="public.home">RSVP</a>
           </div>
           <ul class="nav navbar-nav navbar-left" ng-if="!!auth.user.username">
-            <li><a href="#" ui-sref="app.analysis.new">Start Analysis</a></li>
+            <li><a href="#" ui-sref="user.analysis.new">Start Analysis</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" ng-if="!!auth.user.username">
@@ -32,11 +34,14 @@
       <div ui-view></div>
     </div>
 
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/select2/select2.js"></script>
     <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/js-xls/dist/xls.full.min.js"></script>
     <script src="/bower_components/angular-ui-bootstrap/ui-bootstrap.js"></script>
+    <script src="/bower_components/angular-ui-select2/src/select2.js"></script>
     <script src="/js/rsvp-ck.js"></script>
   </body>
 </html>

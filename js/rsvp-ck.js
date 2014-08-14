@@ -102,7 +102,7 @@
      Begin rsvp.js
 ********************************************** */
 
-var app = angular.module('rsvpApp', ['ui.router','ui.bootstrap','ngCookies']);
+var app = angular.module('rsvpApp', ['ui.router','ui.bootstrap','ui.select2']);
 
 app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
   
@@ -154,29 +154,10 @@ app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
           }
         }
       })
-      .state('user.home', {
-        url: '/',
-        templateUrl: 'home'
-      })
-      .state('user.private', {
-        abstract: true,
-        url: '/private/',
-        templateUrl: 'private/layout'
-      })
-      .state('user.private.home', {
-        url: '',
-        templateUrl: 'private/home'
-      })
-      .state('user.private.nested', {
-        url: 'nested/',
-        templateUrl: 'private/nested'
-      })
-      .state('user.private.admin', {
-        url: 'admin/',
-        templateUrl: 'private/nestedAdmin',
-        data: {
-          access: access.admin
-        }
+      .state('user.analysis', {
+        url: "/analysis",
+        controller: 'AnalysisCtrl',
+        templateUrl: '/js/views/analysis.html'
       });
 
     // Admin routes
@@ -184,21 +165,36 @@ app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
       .state('admin', {
         abstract: true,
         template: "<ui-view/>",
-        data: {
-          access: access.admin
-        },
         resolve: {
-          'loadedAuth': function (Auth) {
-            return Auth.loadMe();
+          'authorizePromise': function (Auth) {
+            return Auth.authorizePromise(access.admin);
           }
         }
       })
-      .state('admin.admin', {
-        url: '/admin/',
-        templateUrl: 'admin',
-        controller: 'AdminCtrl'
+      .state('user.analysis.new', {
+        url: "/new",
+        templateUrl: '/js/views/analysis.new.html',
+        controller: 'NewAnalysisCtrl',
+        resolve: {
+          'serotypes': function ($http) {
+            return $http.get('/serotypes').then(function (res) {
+              return res.data.map(function (a) {
+                return a.label;
+              });
+            });
+          },
+          'referenceSets': function ($http) {
+            return $http.get('/reference-sets').then(function (res) {
+              return res.data;
+            });
+          },
+          'frequencySets': function ($http) {
+            return $http.get('/frequency-sets').then(function (res) {
+              return res.data;
+            });
+          }
+        }
       });
-
 
     $urlRouterProvider.otherwise('/');
 
@@ -213,30 +209,6 @@ app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
   //     url: "/analysis",
   //     controller: 'AnalysisCtrl',
   //     templateUrl: '/js/views/analysis.html'
-  //   })
-  //   .state('app.analysis.new', {
-  //     url: "/new",
-  //     templateUrl: '/js/views/analysis.new.html',
-  //     controller: 'NewAnalysisCtrl',
-  //     resolve: {
-  //       'serotypes': function ($http) {
-  //         return $http.get('/serotypes').then(function (res) {
-  //           return res.data.map(function (a) {
-  //             return a.label;
-  //           });
-  //         });
-  //       },
-  //       'referenceSets': function ($http) {
-  //         return $http.get('/reference-sets').then(function (res) {
-  //           return res.data;
-  //         });
-  //       },
-  //       'frequencySets': function ($http) {
-  //         return $http.get('/frequency-sets').then(function (res) {
-  //           return res.data;
-  //         });
-  //       }
-  //     }
   //   })
 
 
@@ -264,6 +236,11 @@ function getSrv(name) {
   return angular.element(document.body).injector().get(name);
 }
 
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+
 /* **********************************************
      Begin TestCtrl.js
 ********************************************** */
@@ -289,7 +266,7 @@ app.controller('NavCtrl', function ($scope, Auth) {
      Begin Auth.js
 ********************************************** */
 
-app.factory('Auth', function($http, $cookieStore, $q){
+app.factory('Auth', function($http, $q){
 
     var accessLevels = routingConfig.accessLevels
         , userRoles = routingConfig.userRoles
@@ -367,13 +344,10 @@ app.factory('Auth', function($http, $cookieStore, $q){
         authorizePromise: function (role) {
             var self = this;
             return this.userDeferred().then(function () {
-                console.log('start authorization');
                 var deferred = $q.defer();
                 if (self.authorize(role)) {
-                  console.log('authorized');
                   deferred.resolve(true);
                 } else {
-                  console.log('no access');
                   deferred.reject(true);
                 }
                 return deferred.promise;
@@ -395,11 +369,12 @@ app.directive('excelInput', function () {
     'scope': {
       'excelData': '=',
       'excelVariables': '=',
-      'serotypes': '='
+      'serotypes': '=',
+      'requireId': '@'
     },
     'template': "<p ng-if='filename == null'>Drag and drop an Excel file (.xls) here.</p>" +
                 "<p ng-if='filename != null'>Imported {{filename}} ({{excelData.length}} rows).</p>" +
-                "<ul ng-if='filename != null' class='list-inline'><li ng-repeat='var in excelVariables'>“{{var}}”</li></ul>",
+                "Serotypes: <ul ng-if='filename != null' class='list-inline'><li ng-repeat='var in excelVariables'>{{var}}</li></ul>",
     'link': function (scope, element) {
       element[0].className = 'dropzone';
       function FileDragHover(e) {
@@ -432,15 +407,34 @@ app.directive('excelInput', function () {
         scope.filename = file.name;
         var reader = new FileReader();
         var name = file.name;
+
+        function hasNoMissings(row) {
+          for (var i = scope.excelVariables.length - 1; i >= 0; i--) {
+            var st = scope.excelVariables[i];
+            if (!isNumeric(row[st])) {
+              return false;
+            }
+          };
+          return true;
+        }
+
         reader.onload = function(e) {
           var data = e.target.result;
 
           /* if binary string, read with type 'binary' */
           var wb = XLS.read(data, {type: 'binary'});
 
-          scope.excelData = XLS.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+          var tmp = XLS.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+
+          if (scope.requireId === 'true' && !tmp[0].hasOwnProperty('id')) {
+            alert('Please make sure that the dataset includes a column named "id".');
+            return false;
+          }
+
+          scope.excelData = tmp;
           scope.excelVariables = [];
           var prop;
+
 
           for (prop in scope.excelData[0]) {
               var slimprop = prop.replace(/^\D+/g,'').toLowerCase();
@@ -456,6 +450,16 @@ app.directive('excelInput', function () {
               }
           }
 
+          // get rid of missings / non numerics
+          var origCount = scope.excelData.length;
+          console.log(scope.excelData);
+          scope.excelData = scope.excelData.filter(hasNoMissings);
+          var afterCount = scope.excelData.length;
+          var diff = origCount - afterCount;
+          if (diff !== 0) {
+            alert(diff + ' rows contain missing/non-numeric values and have been omitted.');
+          }
+
           scope.$apply();
         };
         reader.readAsBinaryString(file);
@@ -466,6 +470,61 @@ app.directive('excelInput', function () {
       element[0].addEventListener("dragleave", FileDragHover, false);
       element[0].addEventListener("drop", FileSelectHandler, false);
 
+    },
+    'controller': function ($scope) {
+      $scope.$watch('excelVariables', function (dta) {
+        if (!dta || dta.length === 0) {
+          $scope.filename = null;
+        }
+      });
+    }
+  };
+});
+
+
+/* **********************************************
+     Begin SinglePatientInput.js
+********************************************** */
+
+
+app.directive('singlePatientInput', function () {
+  return {
+    'scope': {
+      'data': '=',
+      'variables': '=',
+      'serotypes': '='
+    },
+    'templateUrl': "/js/views/single-patient-input.html",
+    'link': function (scope, element) {
+      scope.patient = {};
+      scope.data = [scope.patient];
+      scope.newvar = {};
+    },
+    'controller': function ($scope) {
+      $scope.createNew = function (newvar) {
+        if ($scope.variables.indexOf(newvar.serotype) !== -1) {
+          return alert('You already entered serotype '+newvar.serotype+'.');
+        }
+        console.log(newvar.serotype);
+        if (typeof newvar.serotype === 'undefined' || newvar.serotype === null) {
+          return alert('Please choose a serotype');
+        }
+        newvar.response = parseFloat(newvar.response);
+        $scope.variables.push(newvar.serotype);
+        $scope.patient[newvar.serotype] = newvar.response;
+        // reset
+        $scope.new = {'serotype': null, 'response': ''};
+        $scope.form.$setPristine();
+        document.getElementById('select-serotype').focus();
+      };
+      $scope.removeSerotype = function (st) {
+        var array = $scope.variables;
+        var index = array.indexOf(st);
+        if (index > -1) {
+          array.splice(index, 1);
+          delete $scope.data[st];
+        };
+      };
     }
   };
 });
@@ -475,16 +534,60 @@ app.directive('excelInput', function () {
      Begin AnalysisForm.js
 ********************************************** */
 
-app.directive('analysisForm', function (AUTH_EVENTS) {
+app.directive('analysisForm', function () {
   return {
     restrict: 'A',
     templateUrl: '/js/views/analysis.form.html',
     scope: {
       'analysis': '=',
-      'serotypes': '='
+      'serotypes': '=',
+      'frequencySets': '=',
+      'referenceSets': '='
     },
     link: function (scope) {
-      
+      scope.showStep3 = false;
+    },
+    controller: function ($scope) {
+      $scope.reset = function () {
+        $scope.analysis.data = [];
+        $scope.analysis.serotypes = [];
+        $scope.analysis.frequencies = {};
+        $scope.analysis.frequencySet = null;
+        $scope.showStep3 = false;
+      };
+      $scope.$watch('analysis.frequencySet', function (set) {
+        if (set !== null) {
+          $scope.analysis.frequencySet = null;
+          for (var i = set.hasSerotypes.length - 1; i >= 0; i--) {
+            var st = set.hasSerotypes[i];
+            if ($scope.analysis.serotypes.indexOf(st) !== -1) {
+              $scope.analysis.frequencies[st] = set.frequencies[st];
+            }
+          };
+        };
+      });
+      $scope.$watch('analysis.frequencies', function (freq) {
+        if (Object.keys(freq).length > 0) {
+          $scope.showStep3 = true;
+        }
+      },true);
+
+      $scope.frequenciesValid = function () {
+        for (var i = $scope.analysis.serotypes.length - 1; i >= 0; i--) {
+          var st = $scope.analysis.serotypes[i];
+          if (!isNumeric($scope.analysis.frequencies[st])) {
+            return false;
+          }
+        };
+        if ($scope.analysis.serotypes.length === 0) {
+          return false;
+        };
+        return true;
+      };
+
+      $scope.dataValid = function () {
+
+      };
     }
   };
 });
@@ -496,9 +599,10 @@ app.directive('analysisForm', function (AUTH_EVENTS) {
 app.controller('NewAnalysisCtrl', function ($scope, serotypes, referenceSets, frequencySets) {
 
   $scope.analysis = {
-    'type': 'single',
     'data': [],
-    'serotypes': []
+    'serotypes': [],
+    'frequencies': {},
+    'frequencySet': null
   };
   $scope.serotypes = serotypes;
   $scope.referenceSets = referenceSets;

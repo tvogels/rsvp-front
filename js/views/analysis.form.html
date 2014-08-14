@@ -5,20 +5,77 @@
       <p>In ac odio vel lorem tincidunt pellentesque. Nam tempor pulvinar turpis. Nunc in leo in libero ultricies interdum. Proin ut urna. Donec ultricies nunc dapibus justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
     </div>
     <div class="col-sm-6">
-      <p>Are you analysing the results from one patient or from a batch of patients?</p>
-      <div class="btn-group">
-        <label class="btn btn-primary" ng-model="analysis.type" btn-radio="'single'">One patient</label>
-        <label class="btn btn-primary" ng-model="analysis.type" btn-radio="'batch'">Batch</label>
+      <tabset>
+        <tab heading="Single patient" ng-click="reset()">
+          <div
+            single-patient-input
+            data="analysis.data"
+            variables="analysis.serotypes"
+            serotypes="serotypes">
+          </div>
+        </tab>
+        <tab heading="Batch upload" ng-click="reset()">
+          <div
+            excel-input
+            excel-data="analysis.data"
+            excel-variables="analysis.serotypes"
+            serotypes="serotypes"
+            require-id="true">
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+  <div ng-show="analysis.serotypes.length > 0">
+    <h2>2. Enter frequency data</h2>
+    <div class="row">
+      <div class="col-sm-6 info">
+        <p>Praesent sem urna, semper quis, sollicitudin vel, commodo sit amet, enim. Fusce semper sem vel ipsum. Vivamus et massa. Mauris pretium blandit lorem. Donec ultricies nunc dapibus justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       </div>
-
-      <div ng-if="analysis.type == 'batch'">
-        <p><br>batch</p>
-        <div excel-input excel-data="analysis.data" excel-variables="analysis.serotypes" serotypes="serotypes"></div>
-      </div>
-
-      <div ng-if="analysis.type == 'single'">
-        <p><br>one person</p>
+      <div class="col-sm-6">
+        <p>
+          <select class="form-control" ng-model="analysis.frequencySet" ng-options="p.label for p in frequencySets">
+            <option value="">-- Select preset --</option>
+          </select>
+        </p>
+        <table class="table">
+          <tr>
+            <th>Serotype</th>
+            <th>Frequency</th>
+          </tr>
+          <tr ng-repeat="st in analysis.serotypes">
+            <th>{{st}}</th>
+            <td><input type="number" min="0" step="any" ng-model="analysis.frequencies[st]" class="form-control" required></td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
+
+  <div ng-show="showStep3">
+    <h2>3. Choose a reference set</h2>
+    <div class="row">
+      <div class="col-sm-6 info">
+        <p>Ac tincidunt ante orci congue risus. Fusce elementum nisl at augue. Maecenas sapien. Maecenas eget eros vel metus accumsan venenatis. Aenean tempor velit eu lorem. Vivamus ac ligula. Aliquam interdum quam. Vivamus eu sapien ut est porta consequat. Morbi lacinia lacus a velit. Integer rhoncus.</p>
+      </div>
+      <div class="col-sm-6">
+        <tabset>
+          <tab heading="Select preset">
+            <p><select ng-model="analysis.referenceSet" ng-options="rs.label for rs in referenceSets" class="form-control">
+            <option value="">-- Make a selection --</option></select></p>
+          </tab>
+          <tab heading="Upload your own data">
+            <div
+              excel-input
+              excel-data="newRefSet.data"
+              excel-variables="newRefSet.serotypes"
+              serotypes="serotypes"
+              require-id="false">
+            </div>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+  <div class="btn btn-primary" ng-click="frequenciesValid()">Test</div>
 </div>
