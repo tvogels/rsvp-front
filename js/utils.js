@@ -18,3 +18,7 @@ function inArray(needle, haystack) {
 function isDefined(vb) {
   return (typeof vb !== 'undefined');
 }
+
+Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};

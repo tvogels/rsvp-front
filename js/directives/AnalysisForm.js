@@ -9,24 +9,27 @@ app.directive('analysisForm', function (Analysis, ReferenceSet, ReferenceSetRepo
 
   function reset(scope, to) {
     scope.analysis.reset();
-    scope.refTabs = [
-      {title:'Select preset'},
-      {title:'Upload your own data'}
-    ];
   }
 
   function saveRefSet(scope, set) {
     return set.computeStatistics()
       .then(function (set) {
-        return ReferenceSetRepo.save(set);
+        if (scope.analysis.hasSerotypes.diff(set.hasSerotypes).length === 0 || 
+            confirm('Your reference set does not contain all serotypes that are in your analysis? Do you want to proceed?')
+           ) {
+          return ReferenceSetRepo
+            .save(set)
+            .then(function (set) {
+              scope.referenceSets.unshift(set);
+              scope.analysis.referenceSet = set;
+              scope.newRefSet = new ReferenceSet;
+              scope.newRefSet.label = "...";
+              scope.refTabs[0].active = true;
+            });
+        } else {
+          return false;
+        }
       })
-      .then(function (set) {
-        scope.referenceSets.unshift(set);
-        scope.analysis.referenceSet = set;
-        scope.newRefSet = new ReferenceSet;
-        scope.newRefSet.label = "...";
-        scope.refTabs[0].active = true;
-      });
   }
 
   return {
@@ -41,8 +44,11 @@ app.directive('analysisForm', function (Analysis, ReferenceSet, ReferenceSetRepo
 
     link: function (scope) {
       scope.frequencyPreset = null;
-      scope.resetSingle = false;
       scope.newRefSet = new ReferenceSet;
+      scope.refTabs = [
+        {title:'Select preset', content: ''},
+        {title:'Upload your own data', content: ''}
+      ];
     },
 
     controller: function ($scope) {
