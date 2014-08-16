@@ -1,14 +1,8 @@
-app.controller('NewAnalysisCtrl', function ($scope, serotypes, referenceSets, frequencySets) {
+app.controller('NewAnalysisCtrl', function ($scope, serotypes, referenceSets, frequencySets, Analysis) {
 
-  $scope.analysis = {
-    'data': [],
-    'serotypes': [],
-    'frequencies': {},
-    'frequencySet': null
-  };
+  $scope.analysis = new Analysis;
   $scope.serotypes = serotypes;
   $scope.referenceSets = referenceSets;
   $scope.frequencySets = frequencySets;
-
 
 });

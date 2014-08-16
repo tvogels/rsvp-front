@@ -1,57 +1,55 @@
-app.directive('analysisForm', function () {
+app.directive('analysisForm', function (Analysis, $rootScope) {
+
+  function bindFrequencyPreset(scope, set) {
+    if (isDefined(set) && set !== null) {
+      scope.frequencyPreset = null;
+      scope.analysis.useFrequencyPreset(set);
+    }
+  }
+
+  function reset(scope, to) {
+    scope.analysis.reset();
+  }
+
   return {
-    restrict: 'A',
-    templateUrl: '/js/views/analysis.form.html',
+
     scope: {
       'analysis': '=',
-      'serotypes': '=',
       'frequencySets': '=',
       'referenceSets': '='
     },
+
+    templateUrl: '/js/views/analysis.form.html',
+
     link: function (scope) {
-      scope.showStep3 = false;
+      scope.frequencyPreset = null;
+      scope.resetSingle = false;
     },
+
     controller: function ($scope) {
-      $scope.reset = function () {
-        $scope.analysis.data = [];
-        $scope.analysis.serotypes = [];
-        $scope.analysis.frequencies = {};
-        $scope.analysis.frequencySet = null;
-        $scope.showStep3 = false;
-      };
-      $scope.$watch('analysis.frequencySet', function (set) {
-        if (set !== null) {
-          $scope.analysis.frequencySet = null;
-          for (var i = set.hasSerotypes.length - 1; i >= 0; i--) {
-            var st = set.hasSerotypes[i];
-            if ($scope.analysis.serotypes.indexOf(st) !== -1) {
-              $scope.analysis.frequencies[st] = set.frequencies[st];
-            }
-          };
-        };
-      });
-      $scope.$watch('analysis.frequencies', function (freq) {
-        if (Object.keys(freq).length > 0) {
-          $scope.showStep3 = true;
+      $scope.reset = reset.bind(null, $scope);
+      // frequency preset selection
+      $scope.bindFrequencyPreset = bindFrequencyPreset.bind(null, $scope);
+
+      // controlling the current step
+      $scope.step = 1;
+      $scope.$watch('analysis.data', function () {
+        var valid = $scope.analysis.dataValid();
+        if($scope.step < 2 && valid) {
+          $scope.step = 2;
+        } else if (!valid) {
+          $scope.step = 1;
         }
-      },true);
-
-      $scope.frequenciesValid = function () {
-        for (var i = $scope.analysis.serotypes.length - 1; i >= 0; i--) {
-          var st = $scope.analysis.serotypes[i];
-          if (!isNumeric($scope.analysis.frequencies[st])) {
-            return false;
-          }
-        };
-        if ($scope.analysis.serotypes.length === 0) {
-          return false;
-        };
-        return true;
-      };
-
-      $scope.dataValid = function () {
-
-      };
+      }, true);
+      $scope.$watch('analysis.frequencies', function () {
+        var valid = $scope.analysis.frequenciesValid();
+        if($scope.step < 3 && valid) {
+          $scope.step = 3;
+        } else if (!valid) {
+          $scope.step = Math.min($scope.step, 2);
+        }
+      }, true);
     }
+
   };
 });

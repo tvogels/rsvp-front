@@ -1,3 +1,28 @@
+
+function getSrv(name) {
+  return angular.element(document.body).injector().get(name);
+}
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(haystack[i] == needle) return true;
+    }
+    return false;
+}
+
+function isDefined(vb) {
+  return (typeof vb !== 'undefined');
+}
+
+/* **********************************************
+     Begin routingConfig.js
+********************************************** */
+
 (function(exports){
 
     var config = {
@@ -176,42 +201,19 @@ app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
         templateUrl: '/js/views/analysis.new.html',
         controller: 'NewAnalysisCtrl',
         resolve: {
-          'serotypes': function ($http) {
-            return $http.get('/serotypes').then(function (res) {
-              return res.data.map(function (a) {
-                return a.label;
-              });
-            });
+          'serotypes': function (SerotypeRepo) {
+            return SerotypeRepo.load();
           },
-          'referenceSets': function ($http) {
-            return $http.get('/reference-sets').then(function (res) {
-              return res.data;
-            });
+          'referenceSets': function (ReferenceSetRepo) {
+            return ReferenceSetRepo.findAll();
           },
-          'frequencySets': function ($http) {
-            return $http.get('/frequency-sets').then(function (res) {
-              return res.data;
-            });
+          'frequencySets': function (FrequencySetRepo) {
+            return FrequencySetRepo.findAll();
           }
         }
       });
 
     $urlRouterProvider.otherwise('/');
-
-
-  // $stateProvider
-  //   .state('app', {
-  //     url: "",
-  //     controller: 'ApplicationCtrl',
-  //     templateUrl: '/js/views/app.html'
-  //   })
-  //   .state('app.analysis', {
-  //     url: "/analysis",
-  //     controller: 'AnalysisCtrl',
-  //     templateUrl: '/js/views/analysis.html'
-  //   })
-
-
 
 });
 
@@ -232,13 +234,6 @@ app.run(function ($rootScope, $state, Auth) {
 
 });
 
-function getSrv(name) {
-  return angular.element(document.body).injector().get(name);
-}
-
-function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
 
 
 /* **********************************************
@@ -360,125 +355,305 @@ app.factory('Auth', function($http, $q){
 });
 
 /* **********************************************
+     Begin Excel.js
+********************************************** */
+
+app.factory('Excel', function ($q) {
+
+  return {
+
+    /*
+     * Read a workbook (return a promise)
+     */
+    readWorkbookFromFile: function (file) {
+      var deferred = $q.defer();
+
+      var reader = new FileReader();
+      reader.readAsBinaryString(file);
+      reader.onload = function(e) {
+        var data = e.target.result;
+        deferred.resolve(XLS.read(data, {type: 'binary'}));
+      };
+
+      return deferred.promise;
+    },
+
+    /*
+     * Read the first sheet (return a promise)
+     */
+    readFirstSheetFromFile: function (file) {
+      return this.readWorkbookFromFile(file).then(function (wb) {
+        return XLS.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+      });
+    }
+
+  };
+
+});
+
+
+/* **********************************************
+     Begin SerotypeRepo.js
+********************************************** */
+
+app.factory('SerotypeRepo', function ($http) {
+
+  return {
+
+    'serotypes': [],
+
+    'load': function () {
+      var self = this;
+      return $http
+        .get('/serotypes')
+        .then(this.transformer)
+        .then(function (serotypes) {
+          self.serotypes = serotypes;
+          return serotypes;
+        });
+    },
+
+    'transformer': function (res) {
+      return res.data.map(function (a) {
+        return a.label;
+      });
+    }
+
+  };
+
+});
+
+
+/* **********************************************
      Begin ExcelInput.js
 ********************************************** */
 
 
-app.directive('excelInput', function () {
+app.directive('excelInput', function (Excel) {
+
+  /*
+   * Checks if a row has missing values
+   */
+  function hasNoMissings(variables, row) {
+    for (var i = variables.length - 1; i >= 0; i--) {
+      var st = variables[i];
+      if (!isNumeric(row[st])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /*
+   * Handler for drag hover
+   */
+  function fileDragHover(dropElem, e) {
+    e.stopPropagation();
+    e.preventDefault();
+    dropElem.className = (e.type === "dragover" ? "hover dropzone" : "dropzone");
+  }
+
+  /*
+   * Handler for file selection
+   * needs scope because it runs ParseFile(scope, file)
+   */
+  function fileSelectHandler(scope, dropElem, e) {
+    fileDragHover(dropElem, e);
+    var files = dropElem.files || e.dataTransfer.files;
+    parseFile(scope, files[0]);
+  }
+
+  /*
+   * Handle Excel data produced by parseFile
+   */
+  function handleSheet(scope, file, sheet) {
+
+    if (scope.requireId === 'true' && !sheet[0].hasOwnProperty('id')) {
+      alert('Please make sure that the dataset includes a column named "id".');
+      return false;
+    }
+
+    scope.filename = file.name;
+    scope.excelData = sheet;
+
+    renameVariablesAndAssignToScope(scope);
+    checkMissings(scope);
+
+  }
+
+  /*
+   * Rename variables and assign them to the scope
+   */
+  function renameVariablesAndAssignToScope(scope) {
+      var prop;
+
+      scope.excelVariables = [];
+      for (prop in scope.excelData[0]) {
+        var slimprop = prop.replace(/^\D+/g,'').toLowerCase();
+        if (scope.excelData[0].hasOwnProperty(prop) && scope.serotypes.indexOf(slimprop) !== -1) {
+          if (slimprop !== prop) {
+            // change it
+            for (var i = 0; i < scope.excelData.length; i++) {
+              scope.excelData[i][slimprop] = scope.excelData[i][prop];
+              delete scope.excelData[i][prop];
+            }
+          }
+          scope.excelVariables.push(slimprop);
+        }
+      }
+  }
+
+  /*
+   * Check for missings
+   */
+  function checkMissings(scope) {
+    var origCount = scope.excelData.length;
+    scope.excelData = scope.excelData.filter(hasNoMissings.bind(null, scope.excelVariables));
+    var afterCount = scope.excelData.length;
+    var diff = origCount - afterCount;
+    if (diff !== 0) {
+      alert(diff + ' rows contain missing/non-numeric values and have been omitted.');
+      return false;
+    }
+  }
+
+  /*
+   * Parse a file (argument 2) and attach it's contents to the scope
+   */
+  function parseFile(scope, file) {
+    Excel
+      .readFirstSheetFromFile(file)
+      .then(handleSheet.bind(null, scope, file));
+  }
+
+
   return {
+
     'scope': {
       'excelData': '=',
       'excelVariables': '=',
-      'serotypes': '=',
       'requireId': '@'
     },
-    'template': "<p ng-if='filename == null'>Drag and drop an Excel file (.xls) here.</p>" +
-                "<p ng-if='filename != null'>Imported {{filename}} ({{excelData.length}} rows).</p>" +
-                "Serotypes: <ul ng-if='filename != null' class='list-inline'><li ng-repeat='var in excelVariables'>{{var}}</li></ul>",
+
+    'templateUrl': '/js/views/excel-input.html',
+
     'link': function (scope, element) {
-      element[0].className = 'dropzone';
-      function FileDragHover(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        element[0].className = (e.type == "dragover" ? "hover dropzone" : "dropzone");
-      }
-
-      function FileSelectHandler(e) {
-
-        // cancel event and hover styling
-        FileDragHover(e);
-
-        // fetch FileList object
-        var files = element[0].files || e.dataTransfer.files;
-
-        // process all File objects
-        ParseFile(files[0]);
-
-      }
-
-      function ParseFile(file) {
-
-        console.log(
-          "File information", file.name,
-          "type:" , file.type ,
-          "size:" , file.size ,
-          "bytes"
-        );
-        scope.filename = file.name;
-        var reader = new FileReader();
-        var name = file.name;
-
-        function hasNoMissings(row) {
-          for (var i = scope.excelVariables.length - 1; i >= 0; i--) {
-            var st = scope.excelVariables[i];
-            if (!isNumeric(row[st])) {
-              return false;
-            }
-          };
-          return true;
-        }
-
-        reader.onload = function(e) {
-          var data = e.target.result;
-
-          /* if binary string, read with type 'binary' */
-          var wb = XLS.read(data, {type: 'binary'});
-
-          var tmp = XLS.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-
-          if (scope.requireId === 'true' && !tmp[0].hasOwnProperty('id')) {
-            alert('Please make sure that the dataset includes a column named "id".');
-            return false;
-          }
-
-          scope.excelData = tmp;
-          scope.excelVariables = [];
-          var prop;
-
-
-          for (prop in scope.excelData[0]) {
-              var slimprop = prop.replace(/^\D+/g,'').toLowerCase();
-              if (scope.excelData[0].hasOwnProperty(prop) && scope.serotypes.indexOf(slimprop) != -1) {
-                  if (slimprop != prop) {
-                    // change it
-                    for (i = 0; i < scope.excelData.length; i++) { 
-                        scope.excelData[i][slimprop] = scope.excelData[i][prop];
-                        delete scope.excelData[i][prop];
-                    }
-                  }
-                  scope.excelVariables.push(slimprop);
-              }
-          }
-
-          // get rid of missings / non numerics
-          var origCount = scope.excelData.length;
-          console.log(scope.excelData);
-          scope.excelData = scope.excelData.filter(hasNoMissings);
-          var afterCount = scope.excelData.length;
-          var diff = origCount - afterCount;
-          if (diff !== 0) {
-            alert(diff + ' rows contain missing/non-numeric values and have been omitted.');
-          }
-
-          scope.$apply();
-        };
-        reader.readAsBinaryString(file);
-        
-      }
-
-      element[0].addEventListener("dragover", FileDragHover, false);
-      element[0].addEventListener("dragleave", FileDragHover, false);
-      element[0].addEventListener("drop", FileSelectHandler, false);
-
+      var dropElem = element[0];
+      scope.filename = null;
+      dropElem.className = 'dropzone';
+      dropElem.addEventListener("dragover", fileDragHover.bind(null, dropElem), false);
+      dropElem.addEventListener("dragleave", fileDragHover.bind(null, dropElem), false);
+      dropElem.addEventListener("drop", fileSelectHandler.bind(null, scope, dropElem), false);
     },
-    'controller': function ($scope) {
+
+    'controller': function ($scope, SerotypeRepo) {
+      // make sure a list of all available serotypes is accessible
+      $scope.serotypes = SerotypeRepo.serotypes;
+      // watch excelVariables to reset the file name if necessary
       $scope.$watch('excelVariables', function (dta) {
         if (!dta || dta.length === 0) {
           $scope.filename = null;
         }
       });
     }
+
   };
+});
+
+
+/* **********************************************
+     Begin FrequencySetRepo.js
+********************************************** */
+
+app.factory('FrequencySetRepo', function ($http, FrequencySet) {
+
+  return {
+    findAll: function () {
+      return $http
+        .get('/frequency-sets')
+        .then(FrequencySet.apiResponseTransformer);
+    }
+  };
+
+});
+
+
+/* **********************************************
+     Begin sufficientSerotypes.js
+********************************************** */
+
+app.filter('sufficientSerotypes', function () {
+  return function (referenceSets, minimumSerotypes) {
+    return referenceSets.filter(function (referenceSet) {
+      var filtered = minimumSerotypes.filter(function (n) {
+        return referenceSet.hasSerotypes.indexOf(n) === -1;
+      });
+      return filtered.length === 0;
+    });
+  };
+});
+
+/* **********************************************
+     Begin ReferenceSetRepo.js
+********************************************** */
+
+app.factory('ReferenceSetRepo', function ($http, ReferenceSet) {
+
+  return {
+    findAll: function () {
+      return $http
+        .get('/reference-sets')
+        .then(ReferenceSet.apiResponseTransformer);
+    }
+  };
+
+});
+
+
+/* **********************************************
+     Begin AnalysisRepo.js
+********************************************** */
+
+
+
+/* **********************************************
+     Begin ReferenceSet.js
+********************************************** */
+
+app.factory('ReferenceSet', function () {
+
+  function ReferenceSet() {
+    this.id = null;
+    this.label = null;
+    this.user = null;
+    this.public = null;
+    this.hasSerotypes = [];
+    this.statistics = {};
+    this.data = undefined;
+  }
+
+  ReferenceSet.prototype.hasData = function () {
+    return (typeof this.data !== 'undefined');
+  };
+
+  ReferenceSet.build = function (data) {
+    var rs = new ReferenceSet();
+    rs.id = data.id;
+    rs.label = data.label;
+    rs.user = data.user;
+    rs.public = data.public;
+    rs.hasSerotypes = data.hasSerotypes;
+    rs.statistics = data.statistics;
+    rs.data = data.data;
+    return rs;
+  };
+
+  ReferenceSet.apiResponseTransformer = function (response) {
+    return response.data.map(ReferenceSet.build);
+  };
+
+  return ReferenceSet;
+
 });
 
 
@@ -486,47 +661,180 @@ app.directive('excelInput', function () {
      Begin SinglePatientInput.js
 ********************************************** */
 
-
 app.directive('singlePatientInput', function () {
+
   return {
+
     'scope': {
       'data': '=',
-      'variables': '=',
-      'serotypes': '='
+      'variables': '='
     },
+
     'templateUrl': "/js/views/single-patient-input.html",
-    'link': function (scope, element) {
-      scope.patient = {};
-      scope.data = [scope.patient];
-      scope.newvar = {};
-    },
-    'controller': function ($scope) {
-      $scope.createNew = function (newvar) {
-        if ($scope.variables.indexOf(newvar.serotype) !== -1) {
-          return alert('You already entered serotype '+newvar.serotype+'.');
+
+    'link': function (scope) {
+
+      // set up a data array with one element, the 'patient'
+      scope.patient = function () {
+        if (scope.data.length == 0) {
+          var pat = {};
+          scope.data.push(pat);
+          return pat;
+        } else {
+          return scope.data[0];
         }
-        console.log(newvar.serotype);
-        if (typeof newvar.serotype === 'undefined' || newvar.serotype === null) {
+      }
+    },
+
+    'controller': function ($scope, SerotypeRepo) {
+
+      $scope.serotypes = SerotypeRepo.serotypes;
+
+      /*
+       * Save the form
+       */
+      $scope.createNew = function (formdata) {
+
+        // check if we don't have the serotype already
+        if (inArray(formdata.serotype, $scope.variables)) {
+          return alert('You already entered serotype '+formdata.serotype+'.');
+        }
+
+        // force chosing a serotype
+        if (!isDefined(formdata.serotype) || formdata.serotype === null) {
           return alert('Please choose a serotype');
         }
-        newvar.response = parseFloat(newvar.response);
-        $scope.variables.push(newvar.serotype);
-        $scope.patient[newvar.serotype] = newvar.response;
-        // reset
-        $scope.new = {'serotype': null, 'response': ''};
+
+        // parse the response and add it to the right places
+        formdata.response = parseFloat(formdata.response);
+        $scope.variables.push(formdata.serotype);
+        $scope.patient()[formdata.serotype] = formdata.response;
+
+        // reset the form
+        $scope.formdata = {'serotype': null, 'response': ''};
         $scope.form.$setPristine();
         document.getElementById('select-serotype').focus();
       };
+
+      /*
+       * Remove a serotype
+       */
       $scope.removeSerotype = function (st) {
         var array = $scope.variables;
         var index = array.indexOf(st);
         if (index > -1) {
           array.splice(index, 1);
           delete $scope.data[st];
-        };
+        }
       };
+      
+    }
+
+  };
+
+});
+
+
+/* **********************************************
+     Begin FrequencySet.js
+********************************************** */
+
+app.factory('FrequencySet', function () {
+
+  function FrequencySet(id, label, public, user, frequencies, hasSerotypes) {
+    this.id = id;
+    this.label = label;
+    this.public = public;
+    this.user = user;
+    this.frequencies = frequencies;
+    this.hasSerotypes = hasSerotypes;
+  }
+
+  FrequencySet.build = function (data) {
+    return new FrequencySet(
+      data.id,
+      data.label,
+      data.public,
+      data.user,
+      data.frequencies,
+      data.hasSerotypes
+    );
+  };
+
+  FrequencySet.apiResponseTransformer = function (response) {
+    return response.data.map(FrequencySet.build);
+  };
+
+  return FrequencySet;
+
+});
+
+
+/* **********************************************
+     Begin Analysis.js
+********************************************** */
+
+app.factory('Analysis', function () {
+
+  function Analysis() {
+    this.reset();
+  }
+
+  Analysis.prototype.frequenciesValid = function () {
+
+    for (var i = this.hasSerotypes.length - 1; i >= 0; i--) {
+      var st = this.hasSerotypes[i];
+      if (!isNumeric(this.frequencies[st])) {
+        return false;
+      }
+    }
+
+    if (this.hasSerotypes.length === 0) {
+      return false;
+    }
+
+    return true;
+  };
+
+  /*
+   * This is a stub
+   * Better validation should follow
+   */
+  Analysis.prototype.dataValid = function () {
+    return this.hasSerotypes.length > 0;
+  }
+
+  Analysis.prototype.useFrequencyPreset = function (set) {
+    for (var i = set.hasSerotypes.length - 1; i >= 0; i--) {
+      var st = set.hasSerotypes[i];
+      if (this.hasSerotypes.indexOf(st) !== -1) {
+        this.frequencies[st] = set.frequencies[st];
+      }
     }
   };
+
+  Analysis.prototype.reset = function () {
+    this.id = null;
+    this.user = null;
+    this.label = null;
+    this.referenceStatistics = {};
+    this.frequencies = {};
+    this.data = [];
+    this.hasSerotypes = [];
+  }
+
+  Analysis.build = function (data) {
+    var a = new Analysis;
+    a.id = data.id;
+    return a;
+  };
+
+  Analysis.apiResponseTransformer = function (response) {
+    return response.data.map(Analysis.build);
+  };
+
+  return Analysis;
+
 });
 
 
@@ -534,80 +842,73 @@ app.directive('singlePatientInput', function () {
      Begin AnalysisForm.js
 ********************************************** */
 
-app.directive('analysisForm', function () {
+app.directive('analysisForm', function (Analysis, $rootScope) {
+
+  function bindFrequencyPreset(scope, set) {
+    if (isDefined(set) && set !== null) {
+      scope.frequencyPreset = null;
+      scope.analysis.useFrequencyPreset(set);
+    }
+  }
+
+  function reset(scope, to) {
+    scope.analysis.reset();
+  }
+
   return {
-    restrict: 'A',
-    templateUrl: '/js/views/analysis.form.html',
+
     scope: {
       'analysis': '=',
-      'serotypes': '=',
       'frequencySets': '=',
       'referenceSets': '='
     },
+
+    templateUrl: '/js/views/analysis.form.html',
+
     link: function (scope) {
-      scope.showStep3 = false;
+      scope.frequencyPreset = null;
+      scope.resetSingle = false;
     },
+
     controller: function ($scope) {
-      $scope.reset = function () {
-        $scope.analysis.data = [];
-        $scope.analysis.serotypes = [];
-        $scope.analysis.frequencies = {};
-        $scope.analysis.frequencySet = null;
-        $scope.showStep3 = false;
-      };
-      $scope.$watch('analysis.frequencySet', function (set) {
-        if (set !== null) {
-          $scope.analysis.frequencySet = null;
-          for (var i = set.hasSerotypes.length - 1; i >= 0; i--) {
-            var st = set.hasSerotypes[i];
-            if ($scope.analysis.serotypes.indexOf(st) !== -1) {
-              $scope.analysis.frequencies[st] = set.frequencies[st];
-            }
-          };
-        };
-      });
-      $scope.$watch('analysis.frequencies', function (freq) {
-        if (Object.keys(freq).length > 0) {
-          $scope.showStep3 = true;
+      $scope.reset = reset.bind(null, $scope);
+      // frequency preset selection
+      $scope.bindFrequencyPreset = bindFrequencyPreset.bind(null, $scope);
+
+      // controlling the current step
+      $scope.step = 1;
+      $scope.$watch('analysis.data', function () {
+        var valid = $scope.analysis.dataValid();
+        if($scope.step < 2 && valid) {
+          $scope.step = 2;
+        } else if (!valid) {
+          $scope.step = 1;
         }
-      },true);
-
-      $scope.frequenciesValid = function () {
-        for (var i = $scope.analysis.serotypes.length - 1; i >= 0; i--) {
-          var st = $scope.analysis.serotypes[i];
-          if (!isNumeric($scope.analysis.frequencies[st])) {
-            return false;
-          }
-        };
-        if ($scope.analysis.serotypes.length === 0) {
-          return false;
-        };
-        return true;
-      };
-
-      $scope.dataValid = function () {
-
-      };
+      }, true);
+      $scope.$watch('analysis.frequencies', function () {
+        var valid = $scope.analysis.frequenciesValid();
+        if($scope.step < 3 && valid) {
+          $scope.step = 3;
+        } else if (!valid) {
+          $scope.step = Math.min($scope.step, 2);
+        }
+      }, true);
     }
+
   };
 });
+
 
 /* **********************************************
      Begin NewAnalysisController.js
 ********************************************** */
 
-app.controller('NewAnalysisCtrl', function ($scope, serotypes, referenceSets, frequencySets) {
+app.controller('NewAnalysisCtrl', function ($scope, serotypes, referenceSets, frequencySets, Analysis) {
 
-  $scope.analysis = {
-    'data': [],
-    'serotypes': [],
-    'frequencies': {},
-    'frequencySet': null
-  };
+  $scope.analysis = new Analysis;
   $scope.serotypes = serotypes;
   $scope.referenceSets = referenceSets;
   $scope.frequencySets = frequencySets;
-
 
 });
 
@@ -634,7 +935,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $http, Auth) {
   $scope.auth = Auth;
 
   $scope.submitForm = function (data) {
-    console.log('submit', data);
     $scope.errors = {};
     if ($scope.formMode === 'login') {
       Auth.login(data, function () {}, function () {
@@ -643,7 +943,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $http, Auth) {
       });
     } else if ($scope.formMode === 'register') {
       Auth.register(data, function () {
-        console.log('done');
       }, function () {
         $scope.errors.usernameInUse = true;
       });

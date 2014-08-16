@@ -1,0 +1,3 @@
+<p ng-if='filename == null'>Drag and drop an Excel file (.xls) here.</p>
+<p ng-if='filename != null'>Imported {{filename}} ({{excelData.length}} rows).</p>
+<p ng-if='filename != null'>Serotypes: <ul class='list-inline'><li ng-repeat='var in excelVariables'>{{var}}</li></ul></p>

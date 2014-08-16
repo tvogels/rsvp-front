@@ -72,42 +72,19 @@ app.config(function($stateProvider, $urlRouterProvider, $logProvider) {
         templateUrl: '/js/views/analysis.new.html',
         controller: 'NewAnalysisCtrl',
         resolve: {
-          'serotypes': function ($http) {
-            return $http.get('/serotypes').then(function (res) {
-              return res.data.map(function (a) {
-                return a.label;
-              });
-            });
+          'serotypes': function (SerotypeRepo) {
+            return SerotypeRepo.load();
           },
-          'referenceSets': function ($http) {
-            return $http.get('/reference-sets').then(function (res) {
-              return res.data;
-            });
+          'referenceSets': function (ReferenceSetRepo) {
+            return ReferenceSetRepo.findAll();
           },
-          'frequencySets': function ($http) {
-            return $http.get('/frequency-sets').then(function (res) {
-              return res.data;
-            });
+          'frequencySets': function (FrequencySetRepo) {
+            return FrequencySetRepo.findAll();
           }
         }
       });
 
     $urlRouterProvider.otherwise('/');
-
-
-  // $stateProvider
-  //   .state('app', {
-  //     url: "",
-  //     controller: 'ApplicationCtrl',
-  //     templateUrl: '/js/views/app.html'
-  //   })
-  //   .state('app.analysis', {
-  //     url: "/analysis",
-  //     controller: 'AnalysisCtrl',
-  //     templateUrl: '/js/views/analysis.html'
-  //   })
-
-
 
 });
 
@@ -128,10 +105,3 @@ app.run(function ($rootScope, $state, Auth) {
 
 });
 
-function getSrv(name) {
-  return angular.element(document.body).injector().get(name);
-}
-
-function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}

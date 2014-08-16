@@ -7,7 +7,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $http, Auth) {
   $scope.auth = Auth;
 
   $scope.submitForm = function (data) {
-    console.log('submit', data);
     $scope.errors = {};
     if ($scope.formMode === 'login') {
       Auth.login(data, function () {}, function () {
@@ -16,7 +15,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $http, Auth) {
       });
     } else if ($scope.formMode === 'register') {
       Auth.register(data, function () {
-        console.log('done');
       }, function () {
         $scope.errors.usernameInUse = true;
       });

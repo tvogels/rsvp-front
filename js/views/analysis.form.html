@@ -6,19 +6,18 @@
     </div>
     <div class="col-sm-6">
       <tabset>
-        <tab heading="Single patient" ng-click="reset()">
+        <tab heading="Single patient" ng-click="reset('single')">
           <div
             single-patient-input
             data="analysis.data"
-            variables="analysis.serotypes"
-            serotypes="serotypes">
+            variables="analysis.hasSerotypes">
           </div>
         </tab>
-        <tab heading="Batch upload" ng-click="reset()">
+        <tab heading="Batch upload" ng-click="reset('batch')">
           <div
             excel-input
             excel-data="analysis.data"
-            excel-variables="analysis.serotypes"
+            excel-variables="analysis.hasSerotypes"
             serotypes="serotypes"
             require-id="true">
           </div>
@@ -26,7 +25,7 @@
       </tabset>
     </div>
   </div>
-  <div ng-show="analysis.serotypes.length > 0">
+  <div ng-show="step > 1">
     <h2>2. Enter frequency data</h2>
     <div class="row">
       <div class="col-sm-6 info">
@@ -34,7 +33,7 @@
       </div>
       <div class="col-sm-6">
         <p>
-          <select class="form-control" ng-model="analysis.frequencySet" ng-options="p.label for p in frequencySets">
+          <select class="form-control" ng-model="frequencyPreset" ng-options="p.label for p in frequencySets" ng-change="bindFrequencyPreset(frequencyPreset)">
             <option value="">-- Select preset --</option>
           </select>
         </p>
@@ -43,7 +42,7 @@
             <th>Serotype</th>
             <th>Frequency</th>
           </tr>
-          <tr ng-repeat="st in analysis.serotypes">
+          <tr ng-repeat="st in analysis.hasSerotypes">
             <th>{{st}}</th>
             <td><input type="number" min="0" step="any" ng-model="analysis.frequencies[st]" class="form-control" required></td>
           </tr>
@@ -52,7 +51,7 @@
     </div>
   </div>
 
-  <div ng-show="showStep3">
+  <div ng-show="step > 2">
     <h2>3. Choose a reference set</h2>
     <div class="row">
       <div class="col-sm-6 info">
@@ -61,8 +60,11 @@
       <div class="col-sm-6">
         <tabset>
           <tab heading="Select preset">
-            <p><select ng-model="analysis.referenceSet" ng-options="rs.label for rs in referenceSets" class="form-control">
+            <p ng-if="(filtered = (referenceSets | sufficientSerotypes:analysis.hasSerotypes)).length > 0"><select ng-model="analysis.referenceSet" ng-options="rs.label for rs in filtered" class="form-control">
             <option value="">-- Make a selection --</option></select></p>
+            <p ng-if="filtered.length == 0">
+              There are no presets that are compatible with the serotypes you selected. Please choose to upload your own reference data.
+            </p>
           </tab>
           <tab heading="Upload your own data">
             <div
@@ -72,10 +74,20 @@
               serotypes="serotypes"
               require-id="false">
             </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="saveReferenceSet"> Save as private preset for future use.
+              </label>
+            </div>
+            <form novalidate class="form" ng-if="saveReferenceSet">
+              <div class="form-group">
+                <label for="labelInput" class="control-label">Please name this reference set:</label>
+                <input type="text" ng-model="referenceUpload.label" id="labelInput" class="form-control">
+              </div>
+            </form>
           </tab>
         </tabset>
       </div>
     </div>
   </div>
-  <div class="btn btn-primary" ng-click="frequenciesValid()">Test</div>
 </div>

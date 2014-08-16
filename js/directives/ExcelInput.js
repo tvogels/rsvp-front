@@ -1,117 +1,131 @@
 
-app.directive('excelInput', function () {
+app.directive('excelInput', function (Excel) {
+
+  /*
+   * Checks if a row has missing values
+   */
+  function hasNoMissings(variables, row) {
+    for (var i = variables.length - 1; i >= 0; i--) {
+      var st = variables[i];
+      if (!isNumeric(row[st])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /*
+   * Handler for drag hover
+   */
+  function fileDragHover(dropElem, e) {
+    e.stopPropagation();
+    e.preventDefault();
+    dropElem.className = (e.type === "dragover" ? "hover dropzone" : "dropzone");
+  }
+
+  /*
+   * Handler for file selection
+   * needs scope because it runs ParseFile(scope, file)
+   */
+  function fileSelectHandler(scope, dropElem, e) {
+    fileDragHover(dropElem, e);
+    var files = dropElem.files || e.dataTransfer.files;
+    parseFile(scope, files[0]);
+  }
+
+  /*
+   * Handle Excel data produced by parseFile
+   */
+  function handleSheet(scope, file, sheet) {
+
+    if (scope.requireId === 'true' && !sheet[0].hasOwnProperty('id')) {
+      alert('Please make sure that the dataset includes a column named "id".');
+      return false;
+    }
+
+    scope.filename = file.name;
+    scope.excelData = sheet;
+
+    renameVariablesAndAssignToScope(scope);
+    checkMissings(scope);
+
+  }
+
+  /*
+   * Rename variables and assign them to the scope
+   */
+  function renameVariablesAndAssignToScope(scope) {
+      var prop;
+
+      scope.excelVariables = [];
+      for (prop in scope.excelData[0]) {
+        var slimprop = prop.replace(/^\D+/g,'').toLowerCase();
+        if (scope.excelData[0].hasOwnProperty(prop) && scope.serotypes.indexOf(slimprop) !== -1) {
+          if (slimprop !== prop) {
+            // change it
+            for (var i = 0; i < scope.excelData.length; i++) {
+              scope.excelData[i][slimprop] = scope.excelData[i][prop];
+              delete scope.excelData[i][prop];
+            }
+          }
+          scope.excelVariables.push(slimprop);
+        }
+      }
+  }
+
+  /*
+   * Check for missings
+   */
+  function checkMissings(scope) {
+    var origCount = scope.excelData.length;
+    scope.excelData = scope.excelData.filter(hasNoMissings.bind(null, scope.excelVariables));
+    var afterCount = scope.excelData.length;
+    var diff = origCount - afterCount;
+    if (diff !== 0) {
+      alert(diff + ' rows contain missing/non-numeric values and have been omitted.');
+      return false;
+    }
+  }
+
+  /*
+   * Parse a file (argument 2) and attach it's contents to the scope
+   */
+  function parseFile(scope, file) {
+    Excel
+      .readFirstSheetFromFile(file)
+      .then(handleSheet.bind(null, scope, file));
+  }
+
+
   return {
+
     'scope': {
       'excelData': '=',
       'excelVariables': '=',
-      'serotypes': '=',
       'requireId': '@'
     },
-    'template': "<p ng-if='filename == null'>Drag and drop an Excel file (.xls) here.</p>" +
-                "<p ng-if='filename != null'>Imported {{filename}} ({{excelData.length}} rows).</p>" +
-                "Serotypes: <ul ng-if='filename != null' class='list-inline'><li ng-repeat='var in excelVariables'>{{var}}</li></ul>",
+
+    'templateUrl': '/js/views/excel-input.html',
+
     'link': function (scope, element) {
-      element[0].className = 'dropzone';
-      function FileDragHover(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        element[0].className = (e.type == "dragover" ? "hover dropzone" : "dropzone");
-      }
-
-      function FileSelectHandler(e) {
-
-        // cancel event and hover styling
-        FileDragHover(e);
-
-        // fetch FileList object
-        var files = element[0].files || e.dataTransfer.files;
-
-        // process all File objects
-        ParseFile(files[0]);
-
-      }
-
-      function ParseFile(file) {
-
-        console.log(
-          "File information", file.name,
-          "type:" , file.type ,
-          "size:" , file.size ,
-          "bytes"
-        );
-        scope.filename = file.name;
-        var reader = new FileReader();
-        var name = file.name;
-
-        function hasNoMissings(row) {
-          for (var i = scope.excelVariables.length - 1; i >= 0; i--) {
-            var st = scope.excelVariables[i];
-            if (!isNumeric(row[st])) {
-              return false;
-            }
-          };
-          return true;
-        }
-
-        reader.onload = function(e) {
-          var data = e.target.result;
-
-          /* if binary string, read with type 'binary' */
-          var wb = XLS.read(data, {type: 'binary'});
-
-          var tmp = XLS.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
-
-          if (scope.requireId === 'true' && !tmp[0].hasOwnProperty('id')) {
-            alert('Please make sure that the dataset includes a column named "id".');
-            return false;
-          }
-
-          scope.excelData = tmp;
-          scope.excelVariables = [];
-          var prop;
-
-
-          for (prop in scope.excelData[0]) {
-              var slimprop = prop.replace(/^\D+/g,'').toLowerCase();
-              if (scope.excelData[0].hasOwnProperty(prop) && scope.serotypes.indexOf(slimprop) != -1) {
-                  if (slimprop != prop) {
-                    // change it
-                    for (i = 0; i < scope.excelData.length; i++) { 
-                        scope.excelData[i][slimprop] = scope.excelData[i][prop];
-                        delete scope.excelData[i][prop];
-                    }
-                  }
-                  scope.excelVariables.push(slimprop);
-              }
-          }
-
-          // get rid of missings / non numerics
-          var origCount = scope.excelData.length;
-          console.log(scope.excelData);
-          scope.excelData = scope.excelData.filter(hasNoMissings);
-          var afterCount = scope.excelData.length;
-          var diff = origCount - afterCount;
-          if (diff !== 0) {
-            alert(diff + ' rows contain missing/non-numeric values and have been omitted.');
-          }
-
-          scope.$apply();
-        };
-        reader.readAsBinaryString(file);
-        
-      }
-
-      element[0].addEventListener("dragover", FileDragHover, false);
-      element[0].addEventListener("dragleave", FileDragHover, false);
-      element[0].addEventListener("drop", FileSelectHandler, false);
-
+      var dropElem = element[0];
+      scope.filename = null;
+      dropElem.className = 'dropzone';
+      dropElem.addEventListener("dragover", fileDragHover.bind(null, dropElem), false);
+      dropElem.addEventListener("dragleave", fileDragHover.bind(null, dropElem), false);
+      dropElem.addEventListener("drop", fileSelectHandler.bind(null, scope, dropElem), false);
     },
-    'controller': function ($scope) {
+
+    'controller': function ($scope, SerotypeRepo) {
+      // make sure a list of all available serotypes is accessible
+      $scope.serotypes = SerotypeRepo.serotypes;
+      // watch excelVariables to reset the file name if necessary
       $scope.$watch('excelVariables', function (dta) {
         if (!dta || dta.length === 0) {
           $scope.filename = null;
         }
       });
     }
+
   };
 });
