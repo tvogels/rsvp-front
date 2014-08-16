@@ -166,15 +166,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/js\/collapse-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/template\/timepicker\/timepicker.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/timepicker\/timepicker.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/bower_components\/jquery\/src\/ajax\/var\/rquery.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -185,6 +176,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/var\/rquery-ck.js",
       "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/template\/timepicker\/timepicker.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/timepicker\/timepicker.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/select2\/select2.css" : {
       "ignoreWasSetByUser" : 0,
@@ -245,17 +245,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/22_xmlutils-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/js-xlsx\/bits\/47_styxml.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/47_styxml.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/47_styxml-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-highlight.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -267,15 +256,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-highlight.spec-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons.js" : {
+    "\/bower_components\/js-xlsx\/bits\/47_styxml.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons.js",
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/47_styxml.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/47_styxml-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/bits\/43_sstbin.js" : {
@@ -287,6 +276,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/43_sstbin-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/buttons-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/dist\/jszip.js" : {
@@ -333,6 +333,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/bindHtml\/bindHtml-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/select2-bootstrap-css\/docs\/3.3.2.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/docs\/3.3.2.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/bower_components\/bootstrap\/less\/mixins\/nav-divider.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/mixins\/nav-divider.less",
@@ -350,19 +359,10 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/select2-bootstrap-css\/docs\/3.3.2.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/docs\/3.3.2.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/bower_components\/bootstrap\/less\/list-group.less" : {
+    "\/bower_components\/bootstrap\/less\/modals.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/list-group.less",
-      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/css\/list-group.css",
+      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/modals.less",
+      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/css\/modals.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -376,10 +376,10 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/bootstrap\/less\/modals.less" : {
+    "\/bower_components\/bootstrap\/less\/list-group.less" : {
       "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/modals.less",
-      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/css\/modals.css",
+      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/list-group.less",
+      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/css\/list-group.css",
       "outputPathIsSetByUser" : 0,
       "strictUnits" : 0,
       "relativeURLS" : 0,
@@ -483,6 +483,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/30_ctype-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/spin\/stylesheets\/jquery.spin.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/spin\/stylesheets\/jquery.spin.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
     "\/bower_components\/js-xlsx\/bits\/56_cmntcommon.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -494,14 +503,16 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/56_cmntcommon-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/select2-bootstrap-css\/select2-bootstrap.css" : {
+    "\/bower_components\/select2\/select2_locale_es.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/select2-bootstrap.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_es.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_es-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/bits\/78_wbbin.js" : {
       "ignoreWasSetByUser" : 0,
@@ -514,15 +525,35 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/78_wbbin-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/select2\/select2_locale_es.js" : {
+    "\/bower_components\/select2-bootstrap-css\/select2-bootstrap.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_es.js",
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/select2-bootstrap.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/bower_components\/angular-ui-router\/src\/viewDirective.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/viewDirective.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_es-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/viewDirective-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/mixins\/progress-bar.less" : {
@@ -541,28 +572,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/docs\/demo-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/angular-ui-router\/src\/viewDirective.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/viewDirective.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/viewDirective-ck.js",
-      "fileType" : 64
     },
     "\/template\/modal\/window.html" : {
       "ignoreWasSetByUser" : 0,
@@ -663,15 +672,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/ui-bootstrap-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/bower_components\/js-xlsx\/bits\/57_cmntxml.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -682,6 +682,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/57_cmntxml-ck.js",
       "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/js\/directives\/AnalysisForm.js" : {
       "ignoreWasSetByUser" : 0,
@@ -899,15 +908,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/46_stycommon-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/jquery\/src\/selector.js" : {
+    "\/bower_components\/jquery\/src\/traversing.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector.js",
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/var\/arr.js" : {
@@ -919,6 +928,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/var\/arr-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/jquery\/src\/selector.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/dist\/css\/bootstrap-theme.css" : {
@@ -948,17 +968,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/accordion-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/jquery\/src\/traversing.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/timepicker\/docs\/demo.js" : {
@@ -1038,15 +1047,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/exports\/global-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec.js" : {
+    "\/bower_components\/select2\/select2_locale_et.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec.js",
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_et.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_et-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-select2\/src\/select2.js" : {
@@ -1058,17 +1067,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-select2\/src\/select2-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/dropzone\/downloads\/dropzone.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/Gruntfile.js" : {
@@ -1093,6 +1091,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/dist\/xlsx-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/dropzone\/downloads\/dropzone.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/angular-ui-router\/src\/stateFilters.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1104,15 +1113,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/stateFilters-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/select2\/select2_locale_et.js" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_et.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_et-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-parser.spec-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/datepicker\/datepicker.js" : {
@@ -1261,15 +1270,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/access-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/js-xlsx\/bits\/85_parsezip.js" : {
+    "\/bower_components\/jquery\/src\/ajax\/xhr.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/85_parsezip.js",
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/xhr.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/85_parsezip-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/xhr-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xls\/dist\/xls.min.js" : {
@@ -1283,15 +1292,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xls\/dist\/xls.min-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/jquery\/src\/ajax\/xhr.js" : {
+    "\/bower_components\/js-xlsx\/bits\/85_parsezip.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/xhr.js",
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/85_parsezip.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/xhr-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/85_parsezip-ck.js",
       "fileType" : 64
     },
     "\/template\/typeahead\/typeahead-popup.html" : {
@@ -1405,6 +1414,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/bower_components\/spin\/javascripts\/jquery.spin.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/spin\/javascripts\/jquery.spin.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/spin\/javascripts\/jquery.spin-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/js-xls\/dist\/xls.core.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1416,15 +1436,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xls\/dist\/xls.core.min-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/js-xlsx\/dist\/xlsx.full.min.js" : {
+    "\/js\/repositories\/ReferenceSetRepo.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 1,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/dist\/xlsx.full.min.js",
+      "inputAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/dist\/xlsx.full.min-ck.js",
+      "outputAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo-ck.js",
       "fileType" : 64
     },
     "\/template\/carousel\/carousel.html" : {
@@ -1436,15 +1456,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/js\/repositories\/ReferenceSetRepo.js" : {
+    "\/bower_components\/js-xlsx\/dist\/xlsx.full.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 0,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo.js",
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/dist\/xlsx.full.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/dist\/xlsx.full.min-ck.js",
       "fileType" : 64
     },
     "\/template\/timepicker\/timepicker.html" : {
@@ -1509,24 +1529,6 @@
       "initialSize" : 398,
       "fileType" : 8192
     },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/gh-pages.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/gh-pages.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/bower_components\/angular-ui-bootstrap\/template\/popover\/popover.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/popover\/popover.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/bower_components\/select2\/select2_locale_cs.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1537,6 +1539,24 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_cs-ck.js",
       "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/template\/popover\/popover.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/popover\/popover.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/gh-pages.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/gh-pages.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/bower_components\/js-xlsx\/bits\/79_xmlbin.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1631,6 +1651,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/wrap-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/angular-ui-bootstrap\/template\/carousel\/carousel.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/carousel\/carousel.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/bower_components\/jquery\/src\/attributes\/classes.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1652,15 +1681,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ko-ck.js",
       "fileType" : 64
-    },
-    "\/bower_components\/angular-ui-bootstrap\/template\/carousel\/carousel.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/carousel\/carousel.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/bower_components\/js-xlsx\/bits\/35_custprops.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1735,17 +1755,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/bower_components\/select2\/select2_locale_sk.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_sk.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_sk-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/jquery\/src\/css\/var\/rmargin.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1757,14 +1766,16 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/css\/var\/rmargin-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-select2\/docs\/index.html" : {
+    "\/bower_components\/select2\/select2_locale_sk.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-select2\/docs\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_sk.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_sk-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/normalize.less" : {
       "ieCompatibility" : 1,
@@ -1782,6 +1793,15 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/bower_components\/angular-ui-select2\/docs\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-select2\/docs\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/js-xlsx\/tests\/NamedRangesSpec.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1855,15 +1875,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/dropdown-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating.js" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/input-groups.less" : {
@@ -1903,15 +1923,15 @@
       "outputAbbreviatedPath" : "\/js\/controllers\/AnalysisController-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec.js" : {
+    "\/js\/spin.min.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec.js",
+      "inputAbbreviatedPath" : "\/js\/spin.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/position.spec-ck.js",
+      "outputAbbreviatedPath" : "\/js\/spin.min-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/button-groups.less" : {
@@ -1931,6 +1951,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/bower_components\/angular-ui-bootstrap\/docs\/nav.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/docs\/nav.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/bower_components\/js-xlsx\/bits\/42_sstxml.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1942,14 +1971,16 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/42_sstxml-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/docs\/nav.html" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/docs\/nav.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/rating-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/progressbar\/progressbar.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2034,14 +2065,22 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.3.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+    "\/bower_components\/select2-bootstrap-css\/lib\/build.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/lib\/build.less",
+      "outputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/css\/build.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.3.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
+      "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
+      "hidden" : 1,
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/bower_components\/js-xlsx\/bits\/34_extprops.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2071,22 +2110,14 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/select2-bootstrap-css\/lib\/build.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/lib\/build.less",
-      "outputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/css\/build.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.3.html" : {
       "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
+      "ignore" : 1,
       "hidden" : 1,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.3.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/jquery\/src\/queue\/delay.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2158,6 +2189,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/utils-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/gauss\/gauss.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/gauss\/gauss.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/gauss\/gauss.min-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/glyphicons.less" : {
@@ -2264,17 +2306,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/angular-ui-bootstrap\/karma.conf.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/karma.conf.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/karma.conf-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-router\/src\/resolve.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2284,6 +2315,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/resolve-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/angular-ui-bootstrap\/karma.conf.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/karma.conf.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/karma.conf-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/docs\/demo.js" : {
@@ -2343,17 +2385,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-bootstrap\/src\/popover\/popover.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2363,6 +2394,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/popover-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/data.js" : {
@@ -2477,14 +2519,38 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/xlsxworker-ck.js",
       "fileType" : 64
     },
-    "\/template\/tabs\/tab.html" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/template\/tabs\/tab.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2\/select2_locale_gl.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_gl.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_gl-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2\/select2_locale_ms.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ms.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ms-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/pagination.less" : {
       "ieCompatibility" : 1,
@@ -2502,28 +2568,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/bower_components\/select2\/select2_locale_ms.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ms.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ms-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/select2\/select2_locale_gl.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_gl.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_gl-ck.js",
-      "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/month.html" : {
       "ignoreWasSetByUser" : 0,
@@ -2545,16 +2589,14 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/plunker-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec.js" : {
+    "\/template\/tabs\/tab.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/rating\/test\/rating.spec-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/template\/tabs\/tab.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/select2-bootstrap-css\/lib\/build.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2590,6 +2632,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/attributes-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/angular-ui-router\/src\/urlRouter.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/urlRouter.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/urlRouter-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/bootstrap\/less\/badges.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/badges.less",
@@ -2606,17 +2659,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/bower_components\/angular-ui-router\/src\/urlRouter.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/urlRouter.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/urlRouter-ck.js",
-      "fileType" : 64
     },
     "\/bower_components\/angular\/angular.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2651,14 +2693,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing\/var\/rneedsContext-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/_includes\/footer.html" : {
+    "\/bower_components\/dropzone\/downloads\/css\/stylus\/dropzone.styl" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/_includes\/footer.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/css\/stylus\/dropzone.styl",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/css\/css\/dropzone.css",
+      "fileType" : 8,
+      "debugStyle" : 0
     },
     "\/bower_components\/select2-bootstrap-css\/_jekyll\/_layouts\/minimal.html" : {
       "ignoreWasSetByUser" : 0,
@@ -2666,6 +2711,15 @@
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/_layouts\/minimal.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/_includes\/footer.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/_includes\/footer.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -2678,6 +2732,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/js-xlsx\/bits\/52_ccxml.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2687,28 +2752,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/52_ccxml-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/js-xlsx\/bits\/99_footer.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/99_footer.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/99_footer-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/jquery\/src\/data\/Data.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/data\/Data.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/data\/Data-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/bits\/98_exports.js" : {
@@ -2733,48 +2776,27 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xls\/dist\/cpexcel-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser.js" : {
+    "\/bower_components\/jquery\/src\/data\/Data.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser.js",
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/data\/Data.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/grunt\/bs-lessdoc-parser-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/data\/Data-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec.js" : {
+    "\/bower_components\/js-xlsx\/bits\/99_footer.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec.js",
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/99_footer.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/99_footer-ck.js",
       "fileType" : 64
-    },
-    "\/bower_components\/dropzone\/downloads\/css\/stylus\/dropzone.styl" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/css\/stylus\/dropzone.styl",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/css\/css\/dropzone.css",
-      "fileType" : 8,
-      "debugStyle" : 0
-    },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/select2-bootstrap.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/select2-bootstrap.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/popover\/docs\/demo.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2785,6 +2807,26 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/docs\/demo-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/select2-bootstrap.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/css\/select2-bootstrap.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
+    },
+    "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/popover\/test\/popover.spec-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/theme.less" : {
@@ -2978,6 +3020,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/66_wscommon-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/jquery\/src\/ajax\/parseJSON.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/parseJSON.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/parseJSON-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/jquery\/src\/css\/support.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2998,17 +3051,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_bg-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/jquery\/src\/ajax\/parseJSON.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/parseJSON.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/parseJSON-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/misc\/prof.js" : {
@@ -3198,6 +3240,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/bower_components\/jquery\/src\/var\/toString.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/var\/toString.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/var\/toString-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/select2\/select2.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -3226,17 +3279,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/jquery\/src\/selector-native.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-native.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-native-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/popup.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -3246,15 +3288,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/bower_components\/jquery\/src\/var\/toString.js" : {
+    "\/bower_components\/jquery\/src\/selector-native.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/var\/toString.js",
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-native.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/var\/toString-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-native-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/carousel.js" : {
@@ -3445,6 +3487,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/bower_components\/jquery\/src\/effects.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/effects.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/effects-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/bootstrap\/less\/mixins\/text-emphasis.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/mixins\/text-emphasis.less",
@@ -3471,17 +3524,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/data\/var\/data_user-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/jquery\/src\/effects.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/effects.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/effects-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/select2-bootstrap-css\/docs\/css\/bootstrap.min.css" : {
@@ -3625,15 +3667,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular\/angular.min-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/template\/tooltip\/tooltip-popup.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/tooltip\/tooltip-popup.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/bower_components\/js-xlsx\/tests\/EncodedSpec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -3656,6 +3689,26 @@
       "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/css\/css\/basic.css",
       "fileType" : 8,
       "debugStyle" : 0
+    },
+    "\/bower_components\/angular-ui-bootstrap\/template\/tooltip\/tooltip-popup.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/tooltip\/tooltip-popup.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/bower_components\/spinjs\/spin.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/spinjs\/spin.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/spinjs\/spin-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/mixins\/border-radius.less" : {
       "ieCompatibility" : 1,
@@ -3733,17 +3786,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/select2\/select2x2.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2x2.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2x2.png",
-      "initialSize" : 845,
-      "fileType" : 8192
-    },
     "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/test\/accordion.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -3754,6 +3796,17 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/test\/accordion.spec-ck.js",
       "fileType" : 64
+    },
+    "\/bower_components\/select2\/select2x2.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2x2.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2x2.png",
+      "initialSize" : 845,
+      "fileType" : 8192
     },
     "\/js\/views\/analysis.html" : {
       "ignoreWasSetByUser" : 0,
@@ -4003,17 +4056,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/deprecated-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-bootstrap\/src\/pagination\/pagination.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -4025,15 +4067,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/pagination\/pagination-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo.js" : {
+    "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo.js",
+      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone-amd-module.min-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/select2-bootstrap-css\/_jekyll\/_layouts\/default.html" : {
@@ -4056,6 +4098,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/compass\/css\/select2-bootstrap.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/accordion\/docs\/demo-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/mixins\/forms.less" : {
       "ieCompatibility" : 1,
@@ -4083,26 +4136,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.1.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.1.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png",
-      "initialSize" : 8777,
-      "fileType" : 8192
-    },
     "\/bower_components\/bootstrap\/less\/mixins\/pagination.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/mixins\/pagination.less",
@@ -4119,6 +4152,28 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/img\/glyphicons-halflings-white.png",
+      "initialSize" : 8777,
+      "fileType" : 8192
+    },
+    "\/bower_components\/js-xlsx\/bits\/33_coreprops.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/33_coreprops.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/33_coreprops-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/labels.less" : {
       "ieCompatibility" : 1,
@@ -4137,6 +4192,17 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
+    "\/bower_components\/jquery\/src\/traversing\/findFilter.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing\/findFilter.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing\/findFilter-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/bootstrap\/less\/variables.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/variables.less",
@@ -4154,27 +4220,14 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/js-xlsx\/bits\/33_coreprops.js" : {
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.1.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/33_coreprops.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/33_coreprops-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/jquery\/src\/traversing\/findFilter.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing\/findFilter.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/traversing\/findFilter-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.1.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/select2\/select2_locale_fa.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4235,17 +4288,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/js\/repositories\/SerotypeRepo-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/repositories\/SerotypeRepo-ck.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/repositories\/SerotypeRepo-ck-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/bootstrap\/dist\/css\/bootstrap.min.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -4264,6 +4306,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/js\/rsvp-ck.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/rsvp-ck.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/rsvp-ck-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/bootstrap\/less\/panels.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/panels.less",
@@ -4280,17 +4333,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
-    },
-    "\/js\/rsvp-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/rsvp-ck.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/rsvp-ck-ck.js",
-      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/callbacks.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4314,16 +4356,14 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/86_writezip-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular.js" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/test.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/test.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/bootstrap\/js\/tooltip.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4336,14 +4376,16 @@
       "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/js\/tooltip-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/test.html" : {
+    "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/position\/test\/test.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/test-lib\/angular-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/template\/modal\/window.html" : {
       "ignoreWasSetByUser" : 0,
@@ -4466,17 +4508,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/js-xlsx\/bits\/28_binstructs.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/28_binstructs.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/28_binstructs-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/bootstrap\/less\/bootstrap.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/bootstrap.less",
@@ -4493,6 +4524,17 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/bower_components\/js-xlsx\/bits\/28_binstructs.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/28_binstructs.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/28_binstructs-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/manipulation\/_evalUrl.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4544,27 +4586,22 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/jquery\/src\/event.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+    "\/bower_components\/bootstrap\/less\/mixins\/table-row.less" : {
+      "ieCompatibility" : 1,
+      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/mixins\/table-row.less",
+      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/css\/table-row.css",
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/event.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/event-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/js-xlsx\/bits\/58_cmntbin.js" : {
-      "ignoreWasSetByUser" : 0,
+      "strictUnits" : 0,
+      "relativeURLS" : 0,
       "ignore" : 1,
+      "strictImports" : 0,
+      "ignoreWasSetByUser" : 0,
+      "shouldRunBless" : 0,
       "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/58_cmntbin.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/58_cmntbin-ck.js",
-      "fileType" : 64
+      "strictMath" : 0,
+      "outputStyle" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/bower_components\/jquery\/src\/attributes\/attr.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4588,22 +4625,27 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/transition\/test\/transition.spec-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/bootstrap\/less\/mixins\/table-row.less" : {
-      "ieCompatibility" : 1,
-      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/mixins\/table-row.less",
-      "outputAbbreviatedPath" : "\/bower_components\/bootstrap\/less\/css\/table-row.css",
-      "outputPathIsSetByUser" : 0,
-      "strictUnits" : 0,
-      "relativeURLS" : 0,
-      "ignore" : 1,
-      "strictImports" : 0,
+    "\/bower_components\/js-xlsx\/bits\/58_cmntbin.js" : {
       "ignoreWasSetByUser" : 0,
-      "shouldRunBless" : 0,
+      "ignore" : 1,
       "hidden" : 1,
-      "strictMath" : 0,
-      "outputStyle" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/58_cmntbin.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/58_cmntbin-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/js-xlsx\/bits\/82_parsetab.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/82_parsetab.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/82_parsetab-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/attributes\/val.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4616,15 +4658,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/attributes\/val-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/js-xlsx\/bits\/82_parsetab.js" : {
+    "\/bower_components\/jquery\/src\/event.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/82_parsetab.js",
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/event.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/82_parsetab-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/event-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/css.js" : {
@@ -4700,26 +4742,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/template\/alert\/alert.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/template\/alert\/alert.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/select2-bootstrap-css\/lib\/select2-bootstrap.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -4732,6 +4754,28 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/dropdown\/test\/dropdown.spec-ck.js",
+      "fileType" : 64
+    },
+    "\/js\/repositories\/FrequencySetRepo.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/angular-cookies\/angular-cookies.min.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -4743,6 +4787,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-cookies\/angular-cookies.min-ck.js",
       "fileType" : 64
     },
+    "\/js\/controllers\/HomeCtrl.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/controllers\/HomeCtrl.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/controllers\/HomeCtrl-ck.js",
+      "fileType" : 64
+    },
     "\/template\/tooltip\/tooltip-html-unsafe-popup.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -4752,24 +4807,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/year.html" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/year.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/select2\/select2_locale_hr.js" : {
@@ -4818,27 +4864,34 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/js\/repositories\/FrequencySetRepo.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec.js" : {
+    "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/year.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/template\/datepicker\/year.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/docs\/demo-ck.js",
       "fileType" : 64
+    },
+    "\/template\/alert\/alert.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/template\/alert\/alert.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/test\/buttons.spec.js" : {
       "ignoreWasSetByUser" : 0,
@@ -4849,17 +4902,6 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/buttons\/test\/buttons.spec-ck.js",
-      "fileType" : 64
-    },
-    "\/js\/controllers\/HomeCtrl.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/controllers\/HomeCtrl.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/controllers\/HomeCtrl-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/forms.less" : {
@@ -4890,15 +4932,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/rainbow-generic-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs.js" : {
+    "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tabs\/tabs-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip.spec-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/bits\/49_theme.js" : {
@@ -4962,6 +5004,17 @@
       "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/demo.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
+    },
+    "\/bower_components\/spinjs\/jquery.spin.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/spinjs\/jquery.spin.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/spinjs\/jquery.spin-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/rainbow.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5170,17 +5223,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/modal\/test\/modalWindow.spec-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/select2\/select2_locale_nl.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_nl.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_nl-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/js-xls\/shim.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5190,6 +5232,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/js-xls\/shim-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2\/select2_locale_nl.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_nl.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_nl-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/typeahead\/test\/typeahead-popup.spec.js" : {
@@ -5243,14 +5296,16 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/css\/addGetHookIf-ck.js",
       "fileType" : 64
     },
-    "\/template\/accordion\/accordion.html" : {
+    "\/js\/directives\/indiClick.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 1,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/template\/accordion\/accordion.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/js\/directives\/indiClick.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/directives\/indiClick-ck.js",
+      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/css\/defaultDisplay.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5273,6 +5328,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_it-ck.js",
       "fileType" : 64
+    },
+    "\/template\/accordion\/accordion.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/template\/accordion\/accordion.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/jquery\/src\/css\/var\/getStyles.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5409,17 +5473,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/css\/swap-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/js-xlsx\/xlsxworker1.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/xlsxworker1.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/xlsxworker1-ck.js",
-      "fileType" : 64
-    },
     "\/js\/services\/Auth.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5441,6 +5494,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2.png",
       "initialSize" : 613,
       "fileType" : 8192
+    },
+    "\/bower_components\/js-xlsx\/xlsxworker1.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/xlsxworker1.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/xlsxworker1-ck.js",
+      "fileType" : 64
     },
     "\/less\/rsvp.less" : {
       "ieCompatibility" : 1,
@@ -5567,15 +5631,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/parseHTML-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/bootstrap\/dist\/css\/bootstrap.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/dist\/css\/bootstrap.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/bower_components\/js-xlsx\/bits\/77_wbxml.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5587,27 +5642,14 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/77_wbxml-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/dropzone\/downloads\/dropzone.min.js" : {
+    "\/bower_components\/bootstrap\/dist\/css\/bootstrap.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.min-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/bower_components\/bootstrap\/dist\/css\/bootstrap.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/bower_components\/angular-ui-router\/src\/state.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5618,6 +5660,28 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/state-ck.js",
+      "fileType" : 64
+    },
+    "\/js\/controllers\/NewAnalysisController.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/dropzone\/downloads\/dropzone.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/dropzone\/downloads\/dropzone.min-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-router\/src\/urlMatcherFactory.js" : {
@@ -5642,15 +5706,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/var\/nonce-ck.js",
       "fileType" : 64
     },
-    "\/js\/controllers\/NewAnalysisController.js" : {
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 0,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController.js",
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/js\/respond.min-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/bootstrap\/less\/mixins\/background-variant.less" : {
@@ -5734,17 +5798,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/bits\/23_binutils-ck.js",
       "fileType" : 64
     },
-    "\/js\/models\/FrequencySet.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/models\/FrequencySet.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/models\/FrequencySet-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/test\/carousel.spec.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5756,6 +5809,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/carousel\/test\/carousel.spec-ck.js",
       "fileType" : 64
     },
+    "\/js\/models\/FrequencySet.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/models\/FrequencySet.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/models\/FrequencySet-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/select2-bootstrap-css\/docs\/3.4.1.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5764,48 +5828,6 @@
       "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/docs\/3.4.1.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/bower_components\/select2\/select2_locale_vi.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_vi.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_vi-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.3.2.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.3.2.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/bower_components\/jquery\/src\/intro.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/intro.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/intro-ck.js",
-      "fileType" : 64
-    },
-    "\/bower_components\/js-xlsx\/tests\/MixedSpec.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/tests\/MixedSpec.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/tests\/MixedSpec-ck.js",
-      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/sizzle\/dist\/sizzle.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5834,6 +5856,48 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/bower_components\/jquery\/src\/intro.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/intro.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/intro-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/js-xlsx\/tests\/MixedSpec.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/js-xlsx\/tests\/MixedSpec.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/tests\/MixedSpec-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2\/select2_locale_vi.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_vi.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_vi-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.3.2.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.3.2.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/docs\/demo.js" : {
       "ignoreWasSetByUser" : 0,
@@ -5959,6 +6023,17 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/tests\/InterviewSpec-ck.js",
       "fileType" : 64
     },
+    "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/angular-ui-bootstrap\/misc\/demo\/assets\/app.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -5998,17 +6073,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-bootstrap\/src\/tooltip\/test\/tooltip2.spec-ck.js",
-      "fileType" : 64
-    },
     "\/bower_components\/jquery\/src\/var\/support.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -6037,15 +6101,15 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/bower_components\/select2\/select2_locale_ca.js" : {
+    "\/bower_components\/angular-ui-router\/src\/compat.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ca.js",
+      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/compat.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ca-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/compat-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/js-xlsx\/test.js" : {
@@ -6059,15 +6123,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/js-xlsx\/test-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/angular-ui-router\/src\/compat.js" : {
+    "\/bower_components\/select2\/select2_locale_ca.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/compat.js",
+      "inputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ca.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/angular-ui-router\/src\/compat-ck.js",
+      "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_ca-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/pagination\/docs\/demo.js" : {
@@ -6114,17 +6178,6 @@
       "outputAbbreviatedPath" : "\/bower_components\/select2\/select2_locale_zh-TW-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/jquery\/src\/core\/init.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/init.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/init-ck.js",
-      "fileType" : 64
-    },
     "\/js\/filter\/sufficientSerotypes.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -6134,6 +6187,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/filter\/sufficientSerotypes-ck.js",
+      "fileType" : 64
+    },
+    "\/bower_components\/jquery\/src\/core\/init.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/init.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/core\/init-ck.js",
       "fileType" : 64
     },
     "\/bower_components\/angular-ui-bootstrap\/src\/collapse\/docs\/demo.js" : {
@@ -6392,6 +6456,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/bower_components\/jquery\/src\/ajax\/load.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/load.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/load-ck.js",
+      "fileType" : 64
+    },
     "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.2.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -6400,17 +6475,6 @@
       "inputAbbreviatedPath" : "\/bower_components\/select2-bootstrap-css\/_jekyll\/3.4.2.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/js\/routingConfig.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/routingConfig.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/routingConfig-ck.js",
-      "fileType" : 64
     },
     "\/bower_components\/jquery\/src\/selector-sizzle.js" : {
       "ignoreWasSetByUser" : 0,
@@ -6423,15 +6487,15 @@
       "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/selector-sizzle-ck.js",
       "fileType" : 64
     },
-    "\/bower_components\/jquery\/src\/ajax\/load.js" : {
+    "\/js\/routingConfig.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
-      "hidden" : 1,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/load.js",
+      "inputAbbreviatedPath" : "\/js\/routingConfig.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/bower_components\/jquery\/src\/ajax\/load-ck.js",
+      "outputAbbreviatedPath" : "\/js\/routingConfig-ck.js",
       "fileType" : 64
     }
   },
@@ -6467,111 +6531,118 @@
     {
       "type" : 1,
       "position" : 4,
-      "linkedFileAbbreviatedPath" : "\/js\/services\/Auth.js",
+      "linkedFileAbbreviatedPath" : "\/js\/directives\/indiClick.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 5,
-      "linkedFileAbbreviatedPath" : "\/js\/services\/Excel.js",
+      "linkedFileAbbreviatedPath" : "\/js\/services\/Auth.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 6,
-      "linkedFileAbbreviatedPath" : "\/js\/repositories\/SerotypeRepo.js",
+      "linkedFileAbbreviatedPath" : "\/js\/services\/Excel.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 7,
-      "linkedFileAbbreviatedPath" : "\/js\/directives\/ExcelInput.js",
+      "linkedFileAbbreviatedPath" : "\/js\/repositories\/SerotypeRepo.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 8,
-      "linkedFileAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo.js",
+      "linkedFileAbbreviatedPath" : "\/js\/directives\/ExcelInput.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 9,
-      "linkedFileAbbreviatedPath" : "\/js\/filter\/sufficientSerotypes.js",
+      "linkedFileAbbreviatedPath" : "\/js\/repositories\/FrequencySetRepo.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 10,
-      "linkedFileAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo.js",
+      "linkedFileAbbreviatedPath" : "\/js\/filter\/sufficientSerotypes.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 11,
-      "linkedFileAbbreviatedPath" : "\/js\/repositories\/AnalysisRepo.js",
+      "linkedFileAbbreviatedPath" : "\/js\/repositories\/ReferenceSetRepo.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 12,
-      "linkedFileAbbreviatedPath" : "\/js\/models\/ReferenceSet.js",
+      "linkedFileAbbreviatedPath" : "\/js\/repositories\/AnalysisRepo.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 13,
-      "linkedFileAbbreviatedPath" : "\/js\/directives\/SinglePatientInput.js",
+      "linkedFileAbbreviatedPath" : "\/js\/models\/ReferenceSet.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 14,
-      "linkedFileAbbreviatedPath" : "\/js\/models\/FrequencySet.js",
+      "linkedFileAbbreviatedPath" : "\/js\/directives\/SinglePatientInput.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 15,
-      "linkedFileAbbreviatedPath" : "\/js\/models\/Analysis.js",
+      "linkedFileAbbreviatedPath" : "\/js\/models\/FrequencySet.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 16,
-      "linkedFileAbbreviatedPath" : "\/js\/directives\/AnalysisForm.js",
+      "linkedFileAbbreviatedPath" : "\/js\/models\/Analysis.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 17,
-      "linkedFileAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController.js",
+      "linkedFileAbbreviatedPath" : "\/js\/directives\/AnalysisForm.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 18,
-      "linkedFileAbbreviatedPath" : "\/js\/controllers\/AnalysisController.js",
+      "linkedFileAbbreviatedPath" : "\/js\/controllers\/NewAnalysisController.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
       "position" : 19,
+      "linkedFileAbbreviatedPath" : "\/js\/controllers\/AnalysisController.js",
+      "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 1,
+      "position" : 20,
       "linkedFileAbbreviatedPath" : "\/js\/controllers\/HomeCtrl.js",
       "baseFileAbbreviatedPath" : "\/js\/rsvp.js",
       "followForSyntaxChecking" : 1

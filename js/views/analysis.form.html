@@ -59,31 +59,27 @@
       </div>
       <div class="col-sm-6">
         <tabset>
-          <tab heading="Select preset">
+          <tab heading="{{refTabs[0].title}}" active="refTabs[0].active">
             <p ng-if="(filtered = (referenceSets | sufficientSerotypes:analysis.hasSerotypes)).length > 0"><select ng-model="analysis.referenceSet" ng-options="rs.label for rs in filtered" class="form-control">
             <option value="">-- Make a selection --</option></select></p>
             <p ng-if="filtered.length == 0">
               There are no presets that are compatible with the serotypes you selected. Please choose to upload your own reference data.
             </p>
           </tab>
-          <tab heading="Upload your own data">
-            <div
-              excel-input
-              excel-data="newRefSet.data"
-              excel-variables="newRefSet.serotypes"
-              serotypes="serotypes"
-              require-id="false">
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" ng-model="saveReferenceSet"> Save as private preset for future use.
-              </label>
-            </div>
-            <form novalidate class="form" ng-if="saveReferenceSet">
-              <div class="form-group">
-                <label for="labelInput" class="control-label">Please name this reference set:</label>
-                <input type="text" ng-model="referenceUpload.label" id="labelInput" class="form-control">
+          <tab heading="{{refTabs[1].title}}" active="refTabs[1].active">
+            <form novalidate class="form" name="form">
+              <div
+                excel-input
+                excel-data="newRefSet.data"
+                excel-variables="newRefSet.hasSerotypes"
+                serotypes="serotypes"
+                require-id="false">
               </div>
+              <div class="form-group">
+                <label for="labelInput" class="control-label">Name this reference set for future reuse:</label>
+                <input type="text" ng-model="newRefSet.label" id="labelInput" class="form-control" required>
+              </div>
+              <button ng-disabled="!form.$valid || newRefSet.hasSerotypes.length == 0" class="btn btn-default" indi-click="saveRefSet(newRefSet)" type="submit">Save &amp; Use</button>
             </form>
           </tab>
         </tabset>

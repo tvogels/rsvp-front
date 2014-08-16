@@ -69,6 +69,10 @@ app.directive('excelInput', function (Excel) {
             }
           }
           scope.excelVariables.push(slimprop);
+        } else if (slimprop != 'id') {
+          for (var i = 0; i < scope.excelData.length; i++) {
+            delete scope.excelData[i][prop];
+          }
         }
       }
   }

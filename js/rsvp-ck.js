@@ -258,6 +258,54 @@ app.controller('NavCtrl', function ($scope, Auth) {
 
 
 /* **********************************************
+     Begin indiClick.js
+********************************************** */
+
+app.directive('indiClick', ['$parse', function ($parse) {
+    var directive = {
+        link: link,
+        restrict: 'A'
+    };
+    return directive;
+    function link(scope, element, attr) {
+        var fn = $parse(attr['indiClick']),
+        target = element[0];
+
+        element.on('click', function (event) {
+            scope.$apply(function () {
+                var height = element.height(),
+                oldWidth = element.width(),
+                opts = {
+                    length: Math.round(height / 3),
+                    radius: Math.round(height / 5),
+                    width: Math.round(height / 10),
+                    color: element.css("color"),
+                    left: -5
+                }; // customize this "resizing and coloring" algorithm
+                attr.$set('disabled', true);
+                element.width(oldWidth + oldWidth / 2); // make room for spinner
+
+                var spinner = new Spinner(opts).spin(target);
+                // expects a promise
+                // http://docs.angularjs.org/api/ng.$q
+                fn(scope, { $event: event })
+                .then(function (res) {
+                    element.width(oldWidth); // restore size
+                    attr.$set('disabled', false);
+                    spinner.stop();
+                    return res;
+                }, function (res) {
+                    element.width(oldWidth); // restore size
+                    attr.$set('disabled', false);
+                    spinner.stop();
+                });
+            });
+        });
+    }
+}]);
+
+
+/* **********************************************
      Begin Auth.js
 ********************************************** */
 
@@ -499,6 +547,10 @@ app.directive('excelInput', function (Excel) {
             }
           }
           scope.excelVariables.push(slimprop);
+        } else if (slimprop != 'id') {
+          for (var i = 0; i < scope.excelData.length; i++) {
+            delete scope.excelData[i][prop];
+          }
         }
       }
   }
@@ -602,8 +654,13 @@ app.factory('ReferenceSetRepo', function ($http, ReferenceSet) {
   return {
     findAll: function () {
       return $http
-        .get('/reference-sets')
+        .get('/reference-sets?{"$sort":{"public": 1}}')
         .then(ReferenceSet.apiResponseTransformer);
+    },
+    save: function (set) {
+      return $http
+        .post('/reference-sets', set)
+        .then(function (resp) { return ReferenceSet.build(resp.data); });
     }
   };
 
@@ -620,7 +677,7 @@ app.factory('ReferenceSetRepo', function ($http, ReferenceSet) {
      Begin ReferenceSet.js
 ********************************************** */
 
-app.factory('ReferenceSet', function () {
+app.factory('ReferenceSet', function ($q, $timeout) {
 
   function ReferenceSet() {
     this.id = null;
@@ -635,6 +692,40 @@ app.factory('ReferenceSet', function () {
   ReferenceSet.prototype.hasData = function () {
     return (typeof this.data !== 'undefined');
   };
+
+  ReferenceSet.prototype.computeStatistics = function () {
+    var deferred = $q.defer();
+    this.statistics = {
+      'mean': {}, 
+      'med': {}, 
+      'std': {}, 
+      'var': {}, 
+      'p5': {}, 
+      'p95': {}
+    };
+    var self = this;
+    $timeout(function () {
+      for (var i = self.hasSerotypes.length - 1; i >= 0; i--) {
+        var st = self.hasSerotypes[i];
+        // loop through serotypes
+        // construct a vector of results
+        var vector = new gauss.Vector;
+        for (var j = self.data.length - 1; j >= 0; j--) {
+          var row = self.data[j];
+          vector.push(parseFloat(row[st]));
+        }
+        self.statistics.mean[st] = vector.mean();
+        self.statistics.std[st] = vector.stdev();
+        self.statistics.med[st] = vector.median();
+        self.statistics['var'][st] = vector.variance();
+        self.statistics.p5[st] = vector.percentile(.05);
+        self.statistics.p95[st] = vector.percentile(.95);
+      }
+      deferred.resolve(self);
+    }, 0);
+
+    return deferred.promise;
+  }
 
   ReferenceSet.build = function (data) {
     var rs = new ReferenceSet();
@@ -842,7 +933,7 @@ app.factory('Analysis', function () {
      Begin AnalysisForm.js
 ********************************************** */
 
-app.directive('analysisForm', function (Analysis, $rootScope) {
+app.directive('analysisForm', function (Analysis, ReferenceSet, ReferenceSetRepo, $rootScope) {
 
   function bindFrequencyPreset(scope, set) {
     if (isDefined(set) && set !== null) {
@@ -853,6 +944,24 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
 
   function reset(scope, to) {
     scope.analysis.reset();
+    scope.refTabs = [
+      {title:'Select preset'},
+      {title:'Upload your own data'}
+    ];
+  }
+
+  function saveRefSet(scope, set) {
+    return set.computeStatistics()
+      .then(function (set) {
+        return ReferenceSetRepo.save(set);
+      })
+      .then(function (set) {
+        scope.referenceSets.unshift(set);
+        scope.analysis.referenceSet = set;
+        scope.newRefSet = new ReferenceSet;
+        scope.newRefSet.label = "...";
+        scope.refTabs[0].active = true;
+      });
   }
 
   return {
@@ -868,6 +977,7 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
     link: function (scope) {
       scope.frequencyPreset = null;
       scope.resetSingle = false;
+      scope.newRefSet = new ReferenceSet;
     },
 
     controller: function ($scope) {
@@ -893,6 +1003,8 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
           $scope.step = Math.min($scope.step, 2);
         }
       }, true);
+
+      $scope.saveRefSet = saveRefSet.bind(null, $scope);
     }
 
   };

@@ -1,4 +1,4 @@
-app.directive('analysisForm', function (Analysis, $rootScope) {
+app.directive('analysisForm', function (Analysis, ReferenceSet, ReferenceSetRepo, $rootScope) {
 
   function bindFrequencyPreset(scope, set) {
     if (isDefined(set) && set !== null) {
@@ -9,6 +9,24 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
 
   function reset(scope, to) {
     scope.analysis.reset();
+    scope.refTabs = [
+      {title:'Select preset'},
+      {title:'Upload your own data'}
+    ];
+  }
+
+  function saveRefSet(scope, set) {
+    return set.computeStatistics()
+      .then(function (set) {
+        return ReferenceSetRepo.save(set);
+      })
+      .then(function (set) {
+        scope.referenceSets.unshift(set);
+        scope.analysis.referenceSet = set;
+        scope.newRefSet = new ReferenceSet;
+        scope.newRefSet.label = "...";
+        scope.refTabs[0].active = true;
+      });
   }
 
   return {
@@ -24,6 +42,7 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
     link: function (scope) {
       scope.frequencyPreset = null;
       scope.resetSingle = false;
+      scope.newRefSet = new ReferenceSet;
     },
 
     controller: function ($scope) {
@@ -49,6 +68,8 @@ app.directive('analysisForm', function (Analysis, $rootScope) {
           $scope.step = Math.min($scope.step, 2);
         }
       }, true);
+
+      $scope.saveRefSet = saveRefSet.bind(null, $scope);
     }
 
   };
